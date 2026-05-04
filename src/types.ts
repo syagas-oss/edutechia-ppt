@@ -69,7 +69,27 @@ export interface Slide {
   speakerNotes?: string;
   builds?: string[];
   sceneProps?: Record<string, unknown>;
+  sections?: SlideSection[];
+  image?: SlideImage;
+  callout?: string;
+  decorations?: SlideDecoration[];
+  visualStyle?: SlideVisualStyle;
 }
+
+export interface SlideSection {
+  title?: string;
+  body?: string;
+  bullets?: string[];
+}
+
+export interface SlideImage {
+  src: string;
+  alt?: string;
+  position?: 'left' | 'right' | 'center';
+}
+
+export type SlideDecoration = 'radial' | 'organic' | 'scribble' | 'frame';
+export type SlideVisualStyle = 'pastel-cream' | 'lavender' | 'sunny' | 'lime' | 'demo-dark';
 
 export interface Stat {
   v: string;
