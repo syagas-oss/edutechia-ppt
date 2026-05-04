@@ -1,4 +1,4 @@
-﻿export type SlideType =
+export type SlideType =
   | 'HERO'
   | 'HERO_GLOW'
   | 'HERO_FINAL'
@@ -33,11 +33,26 @@ export interface Slide {
   themeVariant?: 'act1' | 'act2' | 'act3' | 'act4' | 'act5' | string;
   layoutVariant?:
     | 'hero-cinematic'
+    | 'hero-cinematic-v2'
+    | 'journey-map'
+    | 'emotional-constellation'
     | 'data-spotlight'
+    | 'funnel-decision'
     | 'process-flow'
-    | 'risk-control'
-    | 'timeline-orbit'
-    | 'stage-demo'
+    | 'orbit-triad'
+    | 'core-engine'
+    | 'market-topography'
+    | 'northstar-compass'
+    | 'pipeline-architecture'
+    | 'layer-stack'
+    | 'risk-cockpit'
+    | 'compliance-shield'
+    | 'timeline-orbit-v2'
+    | 'economic-arc'
+    | 'roadmap-journey'
+    | 'stage-demo-pro'
+    | 'workflow-stage'
+    | 'hero-final-impact'
     | 'default'
     | string;
   motionPreset?: 'reveal' | 'parallax' | 'spotlight' | 'sequence-build' | 'axis-draw' | string;
@@ -53,6 +68,7 @@ export interface Slide {
   timeline?: TimelineItem[];
   speakerNotes?: string;
   builds?: string[];
+  sceneProps?: Record<string, unknown>;
 }
 
 export interface Stat {
