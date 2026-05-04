@@ -72,7 +72,7 @@ export default function App() {
     offscreen.style.left = '-100000px';
     offscreen.style.top = '0';
     offscreen.style.width = '1920px';
-    offscreen.style.background = '#050810';
+    offscreen.style.background = '#f1f6fd';
     document.body.appendChild(offscreen);
 
     const pdf = new jsPDF({ orientation: 'landscape', unit: 'px', format: [1920, 1080] });
@@ -83,9 +83,9 @@ export default function App() {
       offscreen.appendChild(node);
       const reactRoot = createRoot(node);
       reactRoot.render(<SlideRenderer slide={slides[i]} buildIndex={Math.max(0, (slides[i].builds?.length ?? 1) - 1)} staticMode />);
-      await new Promise((resolve) => setTimeout(resolve, 80));
+      await new Promise((resolve) => setTimeout(resolve, 140));
 
-      const canvas = await html2canvas(node, { backgroundColor: '#050810', scale: 2, useCORS: true });
+      const canvas = await html2canvas(node, { backgroundColor: '#f1f6fd', scale: 2, useCORS: true });
       const img = canvas.toDataURL('image/png');
       if (i > 0) pdf.addPage();
       pdf.addImage(img, 'PNG', 0, 0, 1920, 1080);
@@ -192,4 +192,5 @@ export default function App() {
     </main>
   );
 }
+
 
