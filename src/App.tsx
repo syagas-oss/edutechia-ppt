@@ -81,6 +81,25 @@ export default function App() {
   const [isGeneratingPDF, setIsGeneratingPDF] = useState(false);
 
   useEffect(() => {
+    const baseTitle = '🚀 eduTechIA - Copiloto Pedagógico';
+    const spinner = `${baseTitle}   `;
+    let offset = 0;
+
+    const tick = () => {
+      document.title = spinner.slice(offset) + spinner.slice(0, offset);
+      offset = (offset + 1) % spinner.length;
+    };
+
+    tick();
+    const timer = window.setInterval(tick, 180);
+
+    return () => {
+      window.clearInterval(timer);
+      document.title = baseTitle;
+    };
+  }, []);
+
+  useEffect(() => {
     fetch(CONTENT_PATH)
       .then((r) => r.json())
       .then((data: ContentData) => setSlides(Array.isArray(data.slides) ? data.slides : []));
