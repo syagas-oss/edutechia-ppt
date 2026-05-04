@@ -30,6 +30,19 @@ export interface Slide {
   type: SlideType | string;
   title: string;
   subtitle: string;
+  themeVariant?: 'act1' | 'act2' | 'act3' | 'act4' | 'act5' | string;
+  layoutVariant?:
+    | 'hero-cinematic'
+    | 'data-spotlight'
+    | 'process-flow'
+    | 'risk-control'
+    | 'timeline-orbit'
+    | 'stage-demo'
+    | 'default'
+    | string;
+  motionPreset?: 'reveal' | 'parallax' | 'spotlight' | 'sequence-build' | 'axis-draw' | string;
+  emphasis?: 'standard' | 'signature' | string;
+  visualCue?: 'spotlight-beam' | 'alert-pulse' | 'grid-waves' | string;
   description?: string;
   highlight?: string;
   stats?: Stat[];

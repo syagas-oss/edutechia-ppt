@@ -1,647 +1,802 @@
-﻿{
-    "slides":  [
-                   {
-                       "id":  1,
-                       "type":  "HERO_GLOW",
-                       "title":  "Personalizacion Educativa con IA",
-                       "subtitle":  "eduTechIA - Sprint 5",
-                       "highlight":  "Reto IA de personalizacion educativa",
-                       "speakerNotes":  "Apertura del pitch: problema educativo y propuesta central."
-                   },
-                   {
-                       "id":  2,
-                       "type":  "LIST",
-                       "title":  "Agenda",
-                       "subtitle":  "12 bloques del recorrido de la propuesta",
-                       "items":  [
-                                     "Contexto",
-                                     "Retos potenciales y seleccion",
-                                     "Propuesta eduTechIA",
-                                     "Benchmark y arquitectura",
-                                     "Regulacion, POC, demo y negocio"
-                                 ],
-                       "speakerNotes":  "Presentar estructura antes de entrar en detalle."
-                   },
-                   {
-                       "id":  3,
-                       "type":  "HERO",
-                       "title":  "30 alumnos, 30 formas de aprender",
-                       "subtitle":  "El sistema tradicional trata a todos de forma uniforme",
-                       "speakerNotes":  "Slide emocional para encuadrar el problema de personalizacion."
-                   },
-                   {
-                       "id":  4,
-                       "type":  "BENTO_DATA",
-                       "title":  "El desafio en el aula",
-                       "subtitle":  "Datos que justifican la necesidad de intervencion personalizada",
-                       "stats":  [
-                                     {
-                                         "v":  "1 de 5",
-                                         "l":  "dificultades de atencion o aprendizaje",
-                                         "icon":  "Users",
-                                         "trend":  "risk",
-                                         "size":  "lg"
-                                     },
-                                     {
-                                         "v":  "25-30",
-                                         "l":  "alumnos por clase",
-                                         "icon":  "GraduationCap",
-                                         "trend":  "pressure"
-                                     },
-                                     {
-                                         "v":  "10-15%",
-                                         "l":  "tiempo para atencion individual",
-                                         "icon":  "Clock3",
-                                         "trend":  "limited"
-                                     }
-                                 ],
-                       "items":  [
-                                     "Hasta 30% de alumnos rezagados sin personalizacion",
-                                     "Con TDAH se duplica el riesgo de bajo rendimiento",
-                                     "Fuentes: OECD, UNESCO, CDC/APA, McKinsey, Hattie"
-                                 ],
-                       "speakerNotes":  "Combinar cifras de presion docente y riesgo pedagogico."
-                   },
-                   {
-                       "id":  5,
-                       "type":  "CARDS_CHOICE",
-                       "title":  "Reto seleccionado",
-                       "subtitle":  "Personalizacion educativa con IA",
-                       "cards":  [
-                                     {
-                                         "t":  "Por que este reto",
-                                         "d":  "Cada estudiante requiere ritmos y metodos distintos."
-                                     },
-                                     {
-                                         "t":  "Abordaje",
-                                         "d":  "Sistema que adapta ruta, contenido y evaluacion segun progreso."
-                                     },
-                                     {
-                                         "t":  "Publico objetivo",
-                                         "d":  "Docentes de primaria y alumnos con dificultades de atencion."
-                                     }
-                                 ],
-                       "speakerNotes":  "Explicar decision y alcance funcional inicial."
-                   },
-                   {
-                       "id":  6,
-                       "type":  "STEPS",
-                       "title":  "Que propone eduTechIA",
-                       "subtitle":  "Asistente para generar ejercicios de matematicas adaptados",
-                       "items":  [
-                                     {
-                                         "t":  "Ejercicios cortos",
-                                         "d":  "Un solo objetivo por actividad."
-                                     },
-                                     {
-                                         "t":  "Pasos guiados",
-                                         "d":  "Reducen carga cognitiva del alumno."
-                                     },
-                                     {
-                                         "t":  "Feedback inmediato",
-                                         "d":  "Refuerzo positivo y ajuste de dificultad."
-                                     },
-                                     {
-                                         "t":  "Control docente",
-                                         "d":  "La IA apoya, no sustituye al profesor."
-                                     }
-                                 ],
-                       "builds":  [
-                                      "1",
-                                      "2",
-                                      "3",
-                                      "4"
-                                  ],
-                       "speakerNotes":  "Introducir propuesta de valor practico para el aula."
-                   },
-                   {
-                       "id":  7,
-                       "type":  "BENTO_GRID",
-                       "title":  "Beneficios esperados",
-                       "subtitle":  "Impacto en aprendizaje, motivacion y escalabilidad",
-                       "bentoItems":  [
-                                          {
-                                              "title":  "Aprendizaje adaptativo",
-                                              "description":  "Rutas unicas por ritmo y estilo.",
-                                              "variant":  "accent",
-                                              "icon":  "BrainCircuit"
-                                          },
-                                          {
-                                              "title":  "Mayor engagement",
-                                              "description":  "Contenido relevante y feedback personalizado.",
-                                              "variant":  "accent",
-                                              "icon":  "Sparkles"
-                                          },
-                                          {
-                                              "title":  "Escalabilidad educativa",
-                                              "description":  "Atender miles de alumnos con calidad.",
-                                              "variant":  "accent",
-                                              "icon":  "School"
-                                          }
-                                      ],
-                       "speakerNotes":  "Traducir propuesta en beneficios medibles."
-                   },
-                   {
-                       "id":  8,
-                       "type":  "BENTO_GRID",
-                       "title":  "Valor real de la IA",
-                       "subtitle":  "No solo genera contenido: decide siguiente paso optimo",
-                       "bentoItems":  [
-                                          {
-                                              "title":  "Diagnostico flexible",
-                                              "description":  "Interpreta rendimiento y dificultad.",
-                                              "variant":  "accent",
-                                              "icon":  "Search"
-                                          },
-                                          {
-                                              "title":  "Feedback personalizado",
-                                              "description":  "Explicaciones segun nivel del alumno.",
-                                              "variant":  "accent",
-                                              "icon":  "MessageSquareText"
-                                          },
-                                          {
-                                              "title":  "Recomendacion dinamica",
-                                              "description":  "Sugiere avanzar, reforzar o simplificar.",
-                                              "variant":  "accent",
-                                              "icon":  "GitBranchPlus"
-                                          }
-                                      ],
-                       "speakerNotes":  "Diferenciar IA adaptativa frente a reglas estaticas."
-                   },
-                   {
-                       "id":  9,
-                       "type":  "QUADRANT",
-                       "title":  "Comparativa de benchmark",
-                       "subtitle":  "Facilidad para docente vs personalizacion del aprendizaje",
-                       "items":  [
-                                     {
-                                         "t":  "Eje X",
-                                         "d":  "Nivel de personalizacion"
-                                     },
-                                     {
-                                         "t":  "Eje Y",
-                                         "d":  "Facilidad de uso para docente"
-                                     },
-                                     {
-                                         "t":  "Opportunity Space",
-                                         "d":  "Posicion objetivo de eduTechIA"
-                                     }
-                                 ],
-                       "speakerNotes":  "Mostrar hueco estrategico en el mercado."
-                   },
-                   {
-                       "id":  10,
-                       "type":  "BENTO_DATA",
-                       "title":  "North Star",
-                       "subtitle":  "Personalizar en tiempo real para democratizar educacion de calidad",
-                       "stats":  [
-                                     {
-                                         "v":  "KPI 1",
-                                         "l":  "% estudiantes que mejoran rendimiento"
-                                     },
-                                     {
-                                         "v":  "KPI 2",
-                                         "l":  "Tiempo ahorrado al docente"
-                                     }
-                                 ],
-                       "speakerNotes":  "Definir exito con dos KPIs nucleares."
-                   },
-                   {
-                       "id":  11,
-                       "type":  "STEPS",
-                       "title":  "Flujo de uso del docente",
-                       "subtitle":  "Recorrido operativo de la POC",
-                       "items":  [
-                                     {
-                                         "t":  "1. Seleccion inicial",
-                                         "d":  "Tema, nivel y perfil del alumno."
-                                     },
-                                     {
-                                         "t":  "2. Generacion IA",
-                                         "d":  "Ejercicio con solucion y pasos."
-                                     },
-                                     {
-                                         "t":  "3. Respuesta alumno",
-                                         "d":  "Resolucion guiada."
-                                     },
-                                     {
-                                         "t":  "4. Feedback y siguiente",
-                                         "d":  "Recomendacion de continuidad."
-                                     }
-                                 ],
-                       "builds":  [
-                                      "1",
-                                      "2",
-                                      "3",
-                                      "4"
-                                  ],
-                       "speakerNotes":  "Aclarar que en POC inicial el alumno resuelve fuera de la herramienta."
-                   },
-                   {
-                       "id":  12,
-                       "type":  "ROADMAP",
-                       "title":  "Arquitectura funcional",
-                       "subtitle":  "7 bloques desde input docente hasta validacion final",
-                       "items":  [
-                                     "Docente define tema, nivel y perfil",
-                                     "Motor IA interpreta necesidad",
-                                     "Generacion de ejercicio, solucion y feedback",
-                                     "Alumno responde",
-                                     "Analisis de respuesta",
-                                     "Nueva recomendacion",
-                                     "Docente valida"
-                                 ],
-                       "speakerNotes":  "El paso de validacion docente es obligatorio."
-                   },
-                   {
-                       "id":  13,
-                       "type":  "BENTO_GRID",
-                       "title":  "Arquitectura tecnologica por capas",
-                       "subtitle":  "React + n8n + Supabase + motor de personalizacion + IA",
-                       "bentoItems":  [
-                                          {
-                                              "title":  "Capa 1 - Interfaz React",
-                                              "description":  "Vista grupo/alumnos y recomendaciones.",
-                                              "variant":  "accent"
-                                          },
-                                          {
-                                              "title":  "Capa 2 - Orquestacion n8n",
-                                              "description":  "Prompts dinamicos y llamadas IA.",
-                                              "variant":  "accent"
-                                          },
-                                          {
-                                              "title":  "Capa 3 - Datos Supabase",
-                                              "description":  "Perfiles, historico y trazabilidad.",
-                                              "variant":  "accent"
-                                          },
-                                          {
-                                              "title":  "Capa 4 - Motor",
-                                              "description":  "Reglas pedagogicas + IA generativa (Qwen 2.5).",
-                                              "variant":  "accent"
-                                          }
-                                      ],
-                       "speakerNotes":  "Pinecone/ElevenLabs se reservan para fases posteriores."
-                   },
-                   {
-                       "id":  14,
-                       "type":  "ALERT",
-                       "title":  "Evaluacion de riesgos",
-                       "subtitle":  "Los riesgos mas criticos son humanos, no tecnicos",
-                       "cards":  [
-                                     {
-                                         "t":  "Criticos",
-                                         "d":  "Confianza ciega, etiquetado permanente y datos reales de menores.",
-                                         "highlight":  true
-                                     },
-                                     {
-                                         "t":  "Mitigacion",
-                                         "d":  "Confirmacion activa, revision periodica, anonimizacion estricta."
-                                     },
-                                     {
-                                         "t":  "Principio rector",
-                                         "d":  "La IA propone, el docente decide."
-                                     }
-                                 ],
-                       "speakerNotes":  "Resaltar gobernanza y control humano."
-                   },
-                   {
-                       "id":  15,
-                       "type":  "BENTO_MARKET",
-                       "title":  "Marco regulatorio",
-                       "subtitle":  "AI Act, RGPD, LOPDGDD y normativa educativa",
-                       "tableData":  [
-                                         {
-                                             "h":  "AI Act UE 2024/1689",
-                                             "icon":  "Scale",
-                                             "items":  [
-                                                           "Impacto muy alto",
-                                                           "Plazo critico: agosto 2026",
-                                                           "PoC en laboratorio tolerable"
-                                                       ]
-                                         },
-                                         {
-                                             "h":  "RGPD + LOPDGDD",
-                                             "icon":  "Shield",
-                                             "items":  [
-                                                           "Sin datos reales en PoC",
-                                                           "En produccion: EIPD y consentimiento parental"
-                                                       ]
-                                         },
-                                         {
-                                             "h":  "Decision de diseno",
-                                             "icon":  "FileCheck",
-                                             "items":  [
-                                                           "No almacenar diagnostico TDAH",
-                                                           "Usar perfiles de aprendizaje"
-                                                       ]
-                                         }
-                                     ],
-                       "speakerNotes":  "eduTechIA opera en entorno regulado; diseno minimiza datos sensibles."
-                   },
-                   {
-                       "id":  16,
-                       "type":  "CARDS_CHOICE",
-                       "title":  "Alcance de la PoC",
-                       "subtitle":  "Que validamos ahora y que queda fuera",
-                       "cards":  [
-                                     {
-                                         "t":  "Dentro del alcance",
-                                         "d":  "Generacion adaptada, aprobacion docente y perfiles ficticios con medicion de tiempos."
-                                     },
-                                     {
-                                         "t":  "Fuera del alcance",
-                                         "d":  "Fuera: LMS, otras materias, interaccion alumno directa y dashboard avanzado."
-                                     },
-                                     {
-                                         "t":  "Participacion",
-                                         "d":  "2-3 docentes, 4-6 perfiles, 3-5 sesiones, minimo 30 ejercicios."
-                                     }
-                                 ],
-                       "speakerNotes":  "Delimitar POC para asegurar validacion realista."
-                   },
-                   {
-                       "id":  17,
-                       "type":  "BENTO_GRID",
-                       "title":  "Componentes clave P1/P2",
-                       "subtitle":  "Nucleo funcional y mejoras opcionales",
-                       "bentoItems":  [
-                                          {
-                                              "title":  "P1 Formulario perfil",
-                                              "description":  "Sin perfil no hay personalizacion.",
-                                              "variant":  "accent"
-                                          },
-                                          {
-                                              "title":  "P1 Motor n8n",
-                                              "description":  "Genera ejercicio, solucion, feedback.",
-                                              "variant":  "accent"
-                                          },
-                                          {
-                                              "title":  "P1 Aprobacion",
-                                              "description":  "Control humano obligatorio.",
-                                              "variant":  "accent"
-                                          },
-                                          {
-                                              "title":  "P2 Historial y edicion",
-                                              "description":  "Mejora transparencia y experiencia.",
-                                              "variant":  "accent"
-                                          }
-                                      ],
-                       "speakerNotes":  "Separar baseline obligatorio de opcionales."
-                   },
-                   {
-                       "id":  18,
-                       "type":  "LIST",
-                       "title":  "Viabilidad de la solucion",
-                       "subtitle":  "Tres pilares para una PoC exitosa",
-                       "items":  [
-                                     "IA como apoyo al docente",
-                                     "Supervision humana constante",
-                                     "Sin datos sensibles reales"
-                                 ],
-                       "speakerNotes":  "Conectar viabilidad tecnica, pedagogica y legal."
-                   },
-                   {
-                       "id":  19,
-                       "type":  "BENTO_DATA",
-                       "title":  "Metricas de exito",
-                       "subtitle":  "Hipotesis central y criterios de parada",
-                       "stats":  [
-                                     {
-                                         "v":  "\u003e=3.5/5",
-                                         "l":  "calidad pedagogica",
-                                         "icon":  "BadgeCheck",
-                                         "size":  "md"
-                                     },
-                                     {
-                                         "v":  "\u003c=5 min",
-                                         "l":  "tiempo medio docente por ejercicio",
-                                         "icon":  "BadgeCheck",
-                                         "size":  "md"
-                                     },
-                                     {
-                                         "v":  "\u003e=4/5",
-                                         "l":  "satisfaccion docente",
-                                         "icon":  "BadgeCheck",
-                                         "size":  "md"
-                                     }
-                                 ],
-                       "items":  [
-                                     "Parada inmediata: \u003e30% errores graves",
-                                     "Parada inmediata: \u003e10 min de tiempo medio",
-                                     "Parada inmediata: deteccion de datos reales o fallo de seguridad"
-                                 ],
-                       "speakerNotes":  "Definir criterios cuantitativos y kill-switch."
-                   },
-                   {
-                       "id":  20,
-                       "type":  "KINETIC_BRIDGE",
-                       "title":  "Diferencial clave",
-                       "subtitle":  "No solo personalizacion academica: personalizacion cognitiva para dificultades de atencion",
-                       "highlight":  "Foco NEE",
-                       "speakerNotes":  "Mensaje puente antes de la demo."
-                   },
-                   {
-                       "id":  21,
-                       "type":  "VIDEO",
-                       "title":  "Demo POC Frontend",
-                       "subtitle":  "Recorrido de la interfaz en uso docente",
-                       "speakerNotes":  "Presentar enlace/demo operativo de frontend."
-                   },
-                   {
-                       "id":  22,
-                       "type":  "VIDEO",
-                       "title":  "Demo flujo n8n backend",
-                       "subtitle":  "Ejecucion del pipeline de generacion y recomendacion",
-                       "speakerNotes":  "Mostrar automatizacion y trazabilidad del flujo."
-                   },
-                   {
-                       "id":  23,
-                       "type":  "PYRAMID",
-                       "title":  "Principio rector eduTechIA",
-                       "subtitle":  "Seguridad en tres capas",
-                       "bentoItems":  [
-                                          {
-                                              "title":  "Capa tecnica",
-                                              "description":  "Infraestructura segura y cifrado end-to-end."
-                                          },
-                                          {
-                                              "title":  "Capa pedagogica",
-                                              "description":  "Control total del docente."
-                                          },
-                                          {
-                                              "title":  "Capa regulatoria",
-                                              "description":  "Cumplimiento RGPD, AI Act y LOPDGDD."
-                                          }
-                                      ],
-                       "speakerNotes":  "Alinear arquitectura con gobierno y compliance."
-                   },
-                   {
-                       "id":  24,
-                       "type":  "BENTO_GRID",
-                       "title":  "Los 6 guardarrailes",
-                       "subtitle":  "Protecciones activas para uso etico y seguro",
-                       "bentoItems":  [
-                                          {
-                                              "title":  "Supervision humana",
-                                              "description":  "Aprobar obligatorio.",
-                                              "variant":  "accent"
-                                          },
-                                          {
-                                              "title":  "Anonimizacion estructural",
-                                              "description":  "IDs ficticios por defecto.",
-                                              "variant":  "accent"
-                                          },
-                                          {
-                                              "title":  "Sin diagnosticos medicos",
-                                              "description":  "Solo perfiles pedagogicos.",
-                                              "variant":  "accent"
-                                          },
-                                          {
-                                              "title":  "Control de calidad",
-                                              "description":  "Alerta con 30% rechazo.",
-                                              "variant":  "accent"
-                                          },
-                                          {
-                                              "title":  "Transparencia familias",
-                                              "description":  "Contenido etiquetado IA+revision docente.",
-                                              "variant":  "accent"
-                                          },
-                                          {
-                                              "title":  "Sin etiquetado permanente",
-                                              "description":  "Perfiles expiran por curso.",
-                                              "variant":  "accent"
-                                          }
-                                      ],
-                       "speakerNotes":  "Concretar salvaguardas del sistema."
-                   },
-                   {
-                       "id":  25,
-                       "type":  "ALERT",
-                       "title":  "Protocolo de respuesta",
-                       "subtitle":  "Acciones por severidad de incidentes",
-                       "cards":  [
-                                     {
-                                         "t":  "Critico",
-                                         "d":  "Brecha de datos menores: suspension + notificacion AEPD en 72h.",
-                                         "highlight":  true
-                                     },
-                                     {
-                                         "t":  "Alto",
-                                         "d":  "Error \u003e30%: aviso tecnico en 15 min + parche en 48h."
-                                     },
-                                     {
-                                         "t":  "Medio",
-                                         "d":  "Latencia degradada: plan de accion en 7 dias."
-                                     }
-                                 ],
-                       "speakerNotes":  "Mostrar gobernanza operativa ante incidentes."
-                   },
-                   {
-                       "id":  26,
-                       "type":  "TIMELINE",
-                       "title":  "Los 3 horizontes",
-                       "subtitle":  "Escalado por fases con mejora financiera",
-                       "timeline":  [
-                                        {
-                                            "year":  "Ano 1 - Madrid",
-                                            "event":  "35 colegios",
-                                            "description":  "115k EUR ingresos, EBITDA -363 EUR, inversion 358k EUR"
-                                        },
-                                        {
-                                            "year":  "Ano 2 - Espana",
-                                            "event":  "100 colegios",
-                                            "description":  "428k EUR ingresos, EBITDA -520k EUR, inversion 345k EUR"
-                                        },
-                                        {
-                                            "year":  "Ano 3 - Internacional",
-                                            "event":  "260 colegios",
-                                            "description":  "1.45M EUR ingresos, EBITDA +361k EUR, margen 20%"
-                                        }
-                                    ],
-                       "speakerNotes":  "Explicar progresion de mercado y rentabilidad."
-                   },
-                   {
-                       "id":  27,
-                       "type":  "CARDS_CHOICE",
-                       "title":  "Modelo de precios",
-                       "subtitle":  "Tres planes por tipo de centro",
-                       "cards":  [
-                                     {
-                                         "t":  "Centro Basico",
-                                         "d":  "299 EUR/mes, hasta 10 docentes"
-                                     },
-                                     {
-                                         "t":  "Centro Completo",
-                                         "d":  "599 EUR/mes, hasta 30 docentes",
-                                         "highlight":  true
-                                     },
-                                     {
-                                         "t":  "Red/Corporativo",
-                                         "d":  "2000 EUR/mes, 30+ docentes"
-                                     }
-                                 ],
-                       "speakerNotes":  "Relacionar packaging con segmentos."
-                   },
-                   {
-                       "id":  28,
-                       "type":  "SQUADS",
-                       "title":  "Equipo y stack evolutivo",
-                       "subtitle":  "Crecimiento organizativo y tecnico a 3 anos",
-                       "items":  [
-                                     "Equipo: 6 FTE (ano 1), 9 FTE (ano 2), 14 FTE (ano 3)",
-                                     "Stack: n8n + Supabase + React + OpenRouter -\u003e Azure OpenAI + Kubernetes -\u003e modelo propio",
-                                     "Roles clave: CTO, CEO comercial, pedagogo, customer success, data scientist, DPO",
-                                     "Certificaciones y APIs LMS en fases 2-3"
-                                 ],
-                       "speakerNotes":  "Aterrizar capacidad de ejecucion operativa."
-                   },
-                   {
-                       "id":  29,
-                       "type":  "ECONOMIC",
-                       "title":  "Unidad economica",
-                       "subtitle":  "700k EUR requeridos, negocio autofinanciado desde ano 3",
-                       "stats":  [
-                                     {
-                                         "v":  "700k EUR",
-                                         "l":  "inversion inicial",
-                                         "icon":  "BadgeCheck",
-                                         "size":  "md"
-                                     },
-                                     {
-                                         "v":  "-520k EUR",
-                                         "l":  "EBITDA ano 2",
-                                         "icon":  "BadgeCheck",
-                                         "size":  "md"
-                                     },
-                                     {
-                                         "v":  "+361k EUR",
-                                         "l":  "EBITDA ano 3",
-                                         "icon":  "BadgeCheck",
-                                         "size":  "md"
-                                     }
-                                 ],
-                       "speakerNotes":  "Cerrar narrativa financiera con punto de break-even."
-                   },
-                   {
-                       "id":  30,
-                       "type":  "ROADMAP",
-                       "title":  "Hoja de ruta",
-                       "subtitle":  "Del Sprint 6 al liderazgo hispanohablante NEE",
-                       "items":  [
-                                     "Jun 2026: Sprint 6",
-                                     "Q3 2026: Piloto",
-                                     "Q1 2027: Escalado",
-                                     "Q3 2027: Nacional"
-                                 ],
-                       "speakerNotes":  "Plan temporal de crecimiento y despliegue."
-                   },
-                   {
-                       "id":  31,
-                       "type":  "HERO_FINAL",
-                       "title":  "eduTechIA esta lista para el siguiente paso",
-                       "subtitle":  "Segura, viable, rentable y escalable",
-                       "highlight":  "www.edutechia.com | contacto@edutechia.com",
-                       "speakerNotes":  "Cierre y llamada a accion."
-                   }
-               ]
+{
+  "slides": [
+    {
+      "id": 1,
+      "type": "HERO_GLOW",
+      "title": "Personalizacion Educativa con IA",
+      "subtitle": "eduTechIA - Sprint 5",
+      "highlight": "Reto IA de personalizacion educativa",
+      "speakerNotes": "Apertura del pitch: problema educativo y propuesta central.",
+      "themeVariant": "act1",
+      "layoutVariant": "hero-cinematic",
+      "motionPreset": "spotlight",
+      "emphasis": "standard",
+      "visualCue": "spotlight-beam"
+    },
+    {
+      "id": 2,
+      "type": "LIST",
+      "title": "Agenda",
+      "subtitle": "12 bloques del recorrido de la propuesta",
+      "items": [
+        "Contexto",
+        "Retos potenciales y seleccion",
+        "Propuesta eduTechIA",
+        "Benchmark y arquitectura",
+        "Regulacion, POC, demo y negocio"
+      ],
+      "speakerNotes": "Presentar estructura antes de entrar en detalle.",
+      "themeVariant": "act1",
+      "layoutVariant": "process-flow",
+      "motionPreset": "reveal",
+      "emphasis": "standard",
+      "visualCue": "grid-waves"
+    },
+    {
+      "id": 3,
+      "type": "HERO",
+      "title": "30 alumnos, 30 formas de aprender",
+      "subtitle": "El sistema tradicional trata a todos de forma uniforme",
+      "speakerNotes": "Slide emocional para encuadrar el problema de personalizacion.",
+      "themeVariant": "act1",
+      "layoutVariant": "hero-cinematic",
+      "motionPreset": "spotlight",
+      "emphasis": "signature",
+      "visualCue": "spotlight-beam"
+    },
+    {
+      "id": 4,
+      "type": "BENTO_DATA",
+      "title": "El desafio en el aula",
+      "subtitle": "Datos que justifican la necesidad de intervencion personalizada",
+      "stats": [
+        {
+          "v": "1 de 5",
+          "l": "dificultades de atencion o aprendizaje",
+          "icon": "Users",
+          "trend": "risk",
+          "size": "lg"
+        },
+        {
+          "v": "25-30",
+          "l": "alumnos por clase",
+          "icon": "GraduationCap",
+          "trend": "pressure"
+        },
+        {
+          "v": "10-15%",
+          "l": "tiempo para atencion individual",
+          "icon": "Clock3",
+          "trend": "limited"
+        }
+      ],
+      "items": [
+        "Hasta 30% de alumnos rezagados sin personalizacion",
+        "Con TDAH se duplica el riesgo de bajo rendimiento",
+        "Fuentes: OECD, UNESCO, CDC/APA, McKinsey, Hattie"
+      ],
+      "speakerNotes": "Combinar cifras de presion docente y riesgo pedagogico.",
+      "themeVariant": "act1",
+      "layoutVariant": "data-spotlight",
+      "motionPreset": "parallax",
+      "emphasis": "standard",
+      "visualCue": "grid-waves"
+    },
+    {
+      "id": 5,
+      "type": "CARDS_CHOICE",
+      "title": "Reto seleccionado",
+      "subtitle": "Personalizacion educativa con IA",
+      "cards": [
+        {
+          "t": "Por que este reto",
+          "d": "Cada estudiante requiere ritmos y metodos distintos."
+        },
+        {
+          "t": "Abordaje",
+          "d": "Sistema que adapta ruta, contenido y evaluacion segun progreso."
+        },
+        {
+          "t": "Publico objetivo",
+          "d": "Docentes de primaria y alumnos con dificultades de atencion."
+        }
+      ],
+      "speakerNotes": "Explicar decision y alcance funcional inicial.",
+      "themeVariant": "act1",
+      "layoutVariant": "stage-demo",
+      "motionPreset": "reveal",
+      "emphasis": "standard",
+      "visualCue": "grid-waves"
+    },
+    {
+      "id": 6,
+      "type": "STEPS",
+      "title": "Que propone eduTechIA",
+      "subtitle": "Asistente para generar ejercicios de matematicas adaptados",
+      "items": [
+        {
+          "t": "Ejercicios cortos",
+          "d": "Un solo objetivo por actividad."
+        },
+        {
+          "t": "Pasos guiados",
+          "d": "Reducen carga cognitiva del alumno."
+        },
+        {
+          "t": "Feedback inmediato",
+          "d": "Refuerzo positivo y ajuste de dificultad."
+        },
+        {
+          "t": "Control docente",
+          "d": "La IA apoya, no sustituye al profesor."
+        }
+      ],
+      "builds": [
+        "1",
+        "2",
+        "3",
+        "4"
+      ],
+      "speakerNotes": "Introducir propuesta de valor practico para el aula.",
+      "themeVariant": "act2",
+      "layoutVariant": "process-flow",
+      "motionPreset": "sequence-build",
+      "emphasis": "standard",
+      "visualCue": "grid-waves"
+    },
+    {
+      "id": 7,
+      "type": "BENTO_GRID",
+      "title": "Beneficios esperados",
+      "subtitle": "Impacto en aprendizaje, motivacion y escalabilidad",
+      "bentoItems": [
+        {
+          "title": "Aprendizaje adaptativo",
+          "description": "Rutas unicas por ritmo y estilo.",
+          "variant": "accent",
+          "icon": "BrainCircuit"
+        },
+        {
+          "title": "Mayor engagement",
+          "description": "Contenido relevante y feedback personalizado.",
+          "variant": "accent",
+          "icon": "Sparkles"
+        },
+        {
+          "title": "Escalabilidad educativa",
+          "description": "Atender miles de alumnos con calidad.",
+          "variant": "accent",
+          "icon": "School"
+        }
+      ],
+      "speakerNotes": "Traducir propuesta en beneficios medibles.",
+      "themeVariant": "act2",
+      "layoutVariant": "data-spotlight",
+      "motionPreset": "parallax",
+      "emphasis": "standard",
+      "visualCue": "grid-waves"
+    },
+    {
+      "id": 8,
+      "type": "BENTO_GRID",
+      "title": "Valor real de la IA",
+      "subtitle": "No solo genera contenido: decide siguiente paso optimo",
+      "bentoItems": [
+        {
+          "title": "Diagnostico flexible",
+          "description": "Interpreta rendimiento y dificultad.",
+          "variant": "accent",
+          "icon": "Search"
+        },
+        {
+          "title": "Feedback personalizado",
+          "description": "Explicaciones segun nivel del alumno.",
+          "variant": "accent",
+          "icon": "MessageSquareText"
+        },
+        {
+          "title": "Recomendacion dinamica",
+          "description": "Sugiere avanzar, reforzar o simplificar.",
+          "variant": "accent",
+          "icon": "GitBranchPlus"
+        }
+      ],
+      "speakerNotes": "Diferenciar IA adaptativa frente a reglas estaticas.",
+      "themeVariant": "act2",
+      "layoutVariant": "data-spotlight",
+      "motionPreset": "parallax",
+      "emphasis": "standard",
+      "visualCue": "grid-waves"
+    },
+    {
+      "id": 9,
+      "type": "QUADRANT",
+      "title": "Comparativa de benchmark",
+      "subtitle": "Facilidad para docente vs personalizacion del aprendizaje",
+      "items": [
+        {
+          "t": "Eje X",
+          "d": "Nivel de personalizacion"
+        },
+        {
+          "t": "Eje Y",
+          "d": "Facilidad de uso para docente"
+        },
+        {
+          "t": "Opportunity Space",
+          "d": "Posicion objetivo de eduTechIA"
+        }
+      ],
+      "speakerNotes": "Mostrar hueco estrategico en el mercado.",
+      "themeVariant": "act2",
+      "layoutVariant": "stage-demo",
+      "motionPreset": "axis-draw",
+      "emphasis": "signature",
+      "visualCue": "grid-waves"
+    },
+    {
+      "id": 10,
+      "type": "BENTO_DATA",
+      "title": "North Star",
+      "subtitle": "Personalizar en tiempo real para democratizar educacion de calidad",
+      "stats": [
+        {
+          "v": "KPI 1",
+          "l": "% estudiantes que mejoran rendimiento"
+        },
+        {
+          "v": "KPI 2",
+          "l": "Tiempo ahorrado al docente"
+        }
+      ],
+      "speakerNotes": "Definir exito con dos KPIs nucleares.",
+      "themeVariant": "act2",
+      "layoutVariant": "data-spotlight",
+      "motionPreset": "parallax",
+      "emphasis": "standard",
+      "visualCue": "grid-waves"
+    },
+    {
+      "id": 11,
+      "type": "STEPS",
+      "title": "Flujo de uso del docente",
+      "subtitle": "Recorrido operativo de la POC",
+      "items": [
+        {
+          "t": "1. Seleccion inicial",
+          "d": "Tema, nivel y perfil del alumno."
+        },
+        {
+          "t": "2. Generacion IA",
+          "d": "Ejercicio con solucion y pasos."
+        },
+        {
+          "t": "3. Respuesta alumno",
+          "d": "Resolucion guiada."
+        },
+        {
+          "t": "4. Feedback y siguiente",
+          "d": "Recomendacion de continuidad."
+        }
+      ],
+      "builds": [
+        "1",
+        "2",
+        "3",
+        "4"
+      ],
+      "speakerNotes": "Aclarar que en POC inicial el alumno resuelve fuera de la herramienta.",
+      "themeVariant": "act2",
+      "layoutVariant": "process-flow",
+      "motionPreset": "sequence-build",
+      "emphasis": "standard",
+      "visualCue": "grid-waves"
+    },
+    {
+      "id": 12,
+      "type": "ROADMAP",
+      "title": "Arquitectura funcional",
+      "subtitle": "7 bloques desde input docente hasta validacion final",
+      "items": [
+        "Docente define tema, nivel y perfil",
+        "Motor IA interpreta necesidad",
+        "Generacion de ejercicio, solucion y feedback",
+        "Alumno responde",
+        "Analisis de respuesta",
+        "Nueva recomendacion",
+        "Docente valida"
+      ],
+      "speakerNotes": "El paso de validacion docente es obligatorio.",
+      "themeVariant": "act2",
+      "layoutVariant": "process-flow",
+      "motionPreset": "sequence-build",
+      "emphasis": "standard",
+      "visualCue": "grid-waves"
+    },
+    {
+      "id": 13,
+      "type": "BENTO_GRID",
+      "title": "Arquitectura tecnologica por capas",
+      "subtitle": "React + n8n + Supabase + motor de personalizacion + IA",
+      "bentoItems": [
+        {
+          "title": "Capa 1 - Interfaz React",
+          "description": "Vista grupo/alumnos y recomendaciones.",
+          "variant": "accent"
+        },
+        {
+          "title": "Capa 2 - Orquestacion n8n",
+          "description": "Prompts dinamicos y llamadas IA.",
+          "variant": "accent"
+        },
+        {
+          "title": "Capa 3 - Datos Supabase",
+          "description": "Perfiles, historico y trazabilidad.",
+          "variant": "accent"
+        },
+        {
+          "title": "Capa 4 - Motor",
+          "description": "Reglas pedagogicas + IA generativa (Qwen 2.5).",
+          "variant": "accent"
+        }
+      ],
+      "speakerNotes": "Pinecone/ElevenLabs se reservan para fases posteriores.",
+      "themeVariant": "act2",
+      "layoutVariant": "data-spotlight",
+      "motionPreset": "parallax",
+      "emphasis": "standard",
+      "visualCue": "grid-waves"
+    },
+    {
+      "id": 14,
+      "type": "ALERT",
+      "title": "Evaluacion de riesgos",
+      "subtitle": "Los riesgos mas criticos son humanos, no tecnicos",
+      "cards": [
+        {
+          "t": "Criticos",
+          "d": "Confianza ciega, etiquetado permanente y datos reales de menores.",
+          "highlight": true
+        },
+        {
+          "t": "Mitigacion",
+          "d": "Confirmacion activa, revision periodica, anonimizacion estricta."
+        },
+        {
+          "t": "Principio rector",
+          "d": "La IA propone, el docente decide."
+        }
+      ],
+      "speakerNotes": "Resaltar gobernanza y control humano.",
+      "themeVariant": "act3",
+      "layoutVariant": "risk-control",
+      "motionPreset": "axis-draw",
+      "emphasis": "signature",
+      "visualCue": "alert-pulse"
+    },
+    {
+      "id": 15,
+      "type": "BENTO_MARKET",
+      "title": "Marco regulatorio",
+      "subtitle": "AI Act, RGPD, LOPDGDD y normativa educativa",
+      "tableData": [
+        {
+          "h": "AI Act UE 2024/1689",
+          "icon": "Scale",
+          "items": [
+            "Impacto muy alto",
+            "Plazo critico: agosto 2026",
+            "PoC en laboratorio tolerable"
+          ]
+        },
+        {
+          "h": "RGPD + LOPDGDD",
+          "icon": "Shield",
+          "items": [
+            "Sin datos reales en PoC",
+            "En produccion: EIPD y consentimiento parental"
+          ]
+        },
+        {
+          "h": "Decision de diseno",
+          "icon": "FileCheck",
+          "items": [
+            "No almacenar diagnostico TDAH",
+            "Usar perfiles de aprendizaje"
+          ]
+        }
+      ],
+      "speakerNotes": "eduTechIA opera en entorno regulado; diseno minimiza datos sensibles.",
+      "themeVariant": "act3",
+      "layoutVariant": "risk-control",
+      "motionPreset": "axis-draw",
+      "emphasis": "standard",
+      "visualCue": "alert-pulse"
+    },
+    {
+      "id": 16,
+      "type": "CARDS_CHOICE",
+      "title": "Alcance de la PoC",
+      "subtitle": "Que validamos ahora y que queda fuera",
+      "cards": [
+        {
+          "t": "Dentro del alcance",
+          "d": "Generacion adaptada, aprobacion docente y perfiles ficticios con medicion de tiempos."
+        },
+        {
+          "t": "Fuera del alcance",
+          "d": "Fuera: LMS, otras materias, interaccion alumno directa y dashboard avanzado."
+        },
+        {
+          "t": "Participacion",
+          "d": "2-3 docentes, 4-6 perfiles, 3-5 sesiones, minimo 30 ejercicios."
+        }
+      ],
+      "speakerNotes": "Delimitar POC para asegurar validacion realista.",
+      "themeVariant": "act3",
+      "layoutVariant": "stage-demo",
+      "motionPreset": "reveal",
+      "emphasis": "standard",
+      "visualCue": "grid-waves"
+    },
+    {
+      "id": 17,
+      "type": "BENTO_GRID",
+      "title": "Componentes clave P1/P2",
+      "subtitle": "Nucleo funcional y mejoras opcionales",
+      "bentoItems": [
+        {
+          "title": "P1 Formulario perfil",
+          "description": "Sin perfil no hay personalizacion.",
+          "variant": "accent"
+        },
+        {
+          "title": "P1 Motor n8n",
+          "description": "Genera ejercicio, solucion, feedback.",
+          "variant": "accent"
+        },
+        {
+          "title": "P1 Aprobacion",
+          "description": "Control humano obligatorio.",
+          "variant": "accent"
+        },
+        {
+          "title": "P2 Historial y edicion",
+          "description": "Mejora transparencia y experiencia.",
+          "variant": "accent"
+        }
+      ],
+      "speakerNotes": "Separar baseline obligatorio de opcionales.",
+      "themeVariant": "act3",
+      "layoutVariant": "data-spotlight",
+      "motionPreset": "parallax",
+      "emphasis": "standard",
+      "visualCue": "grid-waves"
+    },
+    {
+      "id": 18,
+      "type": "LIST",
+      "title": "Viabilidad de la solucion",
+      "subtitle": "Tres pilares para una PoC exitosa",
+      "items": [
+        "IA como apoyo al docente",
+        "Supervision humana constante",
+        "Sin datos sensibles reales"
+      ],
+      "speakerNotes": "Conectar viabilidad tecnica, pedagogica y legal.",
+      "themeVariant": "act3",
+      "layoutVariant": "process-flow",
+      "motionPreset": "reveal",
+      "emphasis": "standard",
+      "visualCue": "grid-waves"
+    },
+    {
+      "id": 19,
+      "type": "BENTO_DATA",
+      "title": "Metricas de exito",
+      "subtitle": "Hipotesis central y criterios de parada",
+      "stats": [
+        {
+          "v": ">=3.5/5",
+          "l": "calidad pedagogica",
+          "icon": "BadgeCheck",
+          "size": "md"
+        },
+        {
+          "v": "<=5 min",
+          "l": "tiempo medio docente por ejercicio",
+          "icon": "BadgeCheck",
+          "size": "md"
+        },
+        {
+          "v": ">=4/5",
+          "l": "satisfaccion docente",
+          "icon": "BadgeCheck",
+          "size": "md"
+        }
+      ],
+      "items": [
+        "Parada inmediata: >30% errores graves",
+        "Parada inmediata: >10 min de tiempo medio",
+        "Parada inmediata: deteccion de datos reales o fallo de seguridad"
+      ],
+      "speakerNotes": "Definir criterios cuantitativos y kill-switch.",
+      "themeVariant": "act3",
+      "layoutVariant": "data-spotlight",
+      "motionPreset": "parallax",
+      "emphasis": "standard",
+      "visualCue": "grid-waves"
+    },
+    {
+      "id": 20,
+      "type": "KINETIC_BRIDGE",
+      "title": "Diferencial clave",
+      "subtitle": "No solo personalizacion academica: personalizacion cognitiva para dificultades de atencion",
+      "highlight": "Foco NEE",
+      "speakerNotes": "Mensaje puente antes de la demo.",
+      "themeVariant": "act4",
+      "layoutVariant": "hero-cinematic",
+      "motionPreset": "reveal",
+      "emphasis": "signature",
+      "visualCue": "spotlight-beam"
+    },
+    {
+      "id": 21,
+      "type": "VIDEO",
+      "title": "Demo POC Frontend",
+      "subtitle": "Recorrido de la interfaz en uso docente",
+      "speakerNotes": "Presentar enlace/demo operativo de frontend.",
+      "themeVariant": "act4",
+      "layoutVariant": "stage-demo",
+      "motionPreset": "reveal",
+      "emphasis": "standard",
+      "visualCue": "grid-waves"
+    },
+    {
+      "id": 22,
+      "type": "VIDEO",
+      "title": "Demo flujo n8n backend",
+      "subtitle": "Ejecucion del pipeline de generacion y recomendacion",
+      "speakerNotes": "Mostrar automatizacion y trazabilidad del flujo.",
+      "themeVariant": "act4",
+      "layoutVariant": "stage-demo",
+      "motionPreset": "reveal",
+      "emphasis": "standard",
+      "visualCue": "grid-waves"
+    },
+    {
+      "id": 23,
+      "type": "PYRAMID",
+      "title": "Principio rector eduTechIA",
+      "subtitle": "Seguridad en tres capas",
+      "bentoItems": [
+        {
+          "title": "Capa tecnica",
+          "description": "Infraestructura segura y cifrado end-to-end."
+        },
+        {
+          "title": "Capa pedagogica",
+          "description": "Control total del docente."
+        },
+        {
+          "title": "Capa regulatoria",
+          "description": "Cumplimiento RGPD, AI Act y LOPDGDD."
+        }
+      ],
+      "speakerNotes": "Alinear arquitectura con gobierno y compliance.",
+      "themeVariant": "act4",
+      "layoutVariant": "data-spotlight",
+      "motionPreset": "parallax",
+      "emphasis": "standard",
+      "visualCue": "grid-waves"
+    },
+    {
+      "id": 24,
+      "type": "BENTO_GRID",
+      "title": "Los 6 guardarrailes",
+      "subtitle": "Protecciones activas para uso etico y seguro",
+      "bentoItems": [
+        {
+          "title": "Supervision humana",
+          "description": "Aprobar obligatorio.",
+          "variant": "accent"
+        },
+        {
+          "title": "Anonimizacion estructural",
+          "description": "IDs ficticios por defecto.",
+          "variant": "accent"
+        },
+        {
+          "title": "Sin diagnosticos medicos",
+          "description": "Solo perfiles pedagogicos.",
+          "variant": "accent"
+        },
+        {
+          "title": "Control de calidad",
+          "description": "Alerta con 30% rechazo.",
+          "variant": "accent"
+        },
+        {
+          "title": "Transparencia familias",
+          "description": "Contenido etiquetado IA+revision docente.",
+          "variant": "accent"
+        },
+        {
+          "title": "Sin etiquetado permanente",
+          "description": "Perfiles expiran por curso.",
+          "variant": "accent"
+        }
+      ],
+      "speakerNotes": "Concretar salvaguardas del sistema.",
+      "themeVariant": "act5",
+      "layoutVariant": "data-spotlight",
+      "motionPreset": "parallax",
+      "emphasis": "standard",
+      "visualCue": "alert-pulse"
+    },
+    {
+      "id": 25,
+      "type": "ALERT",
+      "title": "Protocolo de respuesta",
+      "subtitle": "Acciones por severidad de incidentes",
+      "cards": [
+        {
+          "t": "Critico",
+          "d": "Brecha de datos menores: suspension + notificacion AEPD en 72h.",
+          "highlight": true
+        },
+        {
+          "t": "Alto",
+          "d": "Error >30%: aviso tecnico en 15 min + parche en 48h."
+        },
+        {
+          "t": "Medio",
+          "d": "Latencia degradada: plan de accion en 7 dias."
+        }
+      ],
+      "speakerNotes": "Mostrar gobernanza operativa ante incidentes.",
+      "themeVariant": "act5",
+      "layoutVariant": "risk-control",
+      "motionPreset": "axis-draw",
+      "emphasis": "standard",
+      "visualCue": "alert-pulse"
+    },
+    {
+      "id": 26,
+      "type": "TIMELINE",
+      "title": "Los 3 horizontes",
+      "subtitle": "Escalado por fases con mejora financiera",
+      "timeline": [
+        {
+          "year": "Ano 1 - Madrid",
+          "event": "35 colegios",
+          "description": "115k EUR ingresos, EBITDA -363 EUR, inversion 358k EUR"
+        },
+        {
+          "year": "Ano 2 - Espana",
+          "event": "100 colegios",
+          "description": "428k EUR ingresos, EBITDA -520k EUR, inversion 345k EUR"
+        },
+        {
+          "year": "Ano 3 - Internacional",
+          "event": "260 colegios",
+          "description": "1.45M EUR ingresos, EBITDA +361k EUR, margen 20%"
+        }
+      ],
+      "speakerNotes": "Explicar progresion de mercado y rentabilidad.",
+      "themeVariant": "act5",
+      "layoutVariant": "timeline-orbit",
+      "motionPreset": "axis-draw",
+      "emphasis": "signature",
+      "visualCue": "grid-waves"
+    },
+    {
+      "id": 27,
+      "type": "CARDS_CHOICE",
+      "title": "Modelo de precios",
+      "subtitle": "Tres planes por tipo de centro",
+      "cards": [
+        {
+          "t": "Centro Basico",
+          "d": "299 EUR/mes, hasta 10 docentes"
+        },
+        {
+          "t": "Centro Completo",
+          "d": "599 EUR/mes, hasta 30 docentes",
+          "highlight": true
+        },
+        {
+          "t": "Red/Corporativo",
+          "d": "2000 EUR/mes, 30+ docentes"
+        }
+      ],
+      "speakerNotes": "Relacionar packaging con segmentos.",
+      "themeVariant": "act5",
+      "layoutVariant": "stage-demo",
+      "motionPreset": "reveal",
+      "emphasis": "standard",
+      "visualCue": "grid-waves"
+    },
+    {
+      "id": 28,
+      "type": "SQUADS",
+      "title": "Equipo y stack evolutivo",
+      "subtitle": "Crecimiento organizativo y tecnico a 3 anos",
+      "items": [
+        "Equipo: 6 FTE (ano 1), 9 FTE (ano 2), 14 FTE (ano 3)",
+        "Stack: n8n + Supabase + React + OpenRouter -> Azure OpenAI + Kubernetes -> modelo propio",
+        "Roles clave: CTO, CEO comercial, pedagogo, customer success, data scientist, DPO",
+        "Certificaciones y APIs LMS en fases 2-3"
+      ],
+      "speakerNotes": "Aterrizar capacidad de ejecucion operativa.",
+      "themeVariant": "act5",
+      "layoutVariant": "process-flow",
+      "motionPreset": "sequence-build",
+      "emphasis": "standard",
+      "visualCue": "grid-waves"
+    },
+    {
+      "id": 29,
+      "type": "ECONOMIC",
+      "title": "Unidad economica",
+      "subtitle": "700k EUR requeridos, negocio autofinanciado desde ano 3",
+      "stats": [
+        {
+          "v": "700k EUR",
+          "l": "inversion inicial",
+          "icon": "BadgeCheck",
+          "size": "md"
+        },
+        {
+          "v": "-520k EUR",
+          "l": "EBITDA ano 2",
+          "icon": "BadgeCheck",
+          "size": "md"
+        },
+        {
+          "v": "+361k EUR",
+          "l": "EBITDA ano 3",
+          "icon": "BadgeCheck",
+          "size": "md"
+        }
+      ],
+      "speakerNotes": "Cerrar narrativa financiera con punto de break-even.",
+      "themeVariant": "act5",
+      "layoutVariant": "data-spotlight",
+      "motionPreset": "parallax",
+      "emphasis": "standard",
+      "visualCue": "grid-waves"
+    },
+    {
+      "id": 30,
+      "type": "ROADMAP",
+      "title": "Hoja de ruta",
+      "subtitle": "Del Sprint 6 al liderazgo hispanohablante NEE",
+      "items": [
+        "Jun 2026: Sprint 6",
+        "Q3 2026: Piloto",
+        "Q1 2027: Escalado",
+        "Q3 2027: Nacional"
+      ],
+      "speakerNotes": "Plan temporal de crecimiento y despliegue.",
+      "themeVariant": "act5",
+      "layoutVariant": "process-flow",
+      "motionPreset": "sequence-build",
+      "emphasis": "standard",
+      "visualCue": "grid-waves"
+    },
+    {
+      "id": 31,
+      "type": "HERO_FINAL",
+      "title": "eduTechIA esta lista para el siguiente paso",
+      "subtitle": "Segura, viable, rentable y escalable",
+      "highlight": "www.edutechia.com | contacto@edutechia.com",
+      "speakerNotes": "Cierre y llamada a accion.",
+      "themeVariant": "act5",
+      "layoutVariant": "hero-cinematic",
+      "motionPreset": "spotlight",
+      "emphasis": "signature",
+      "visualCue": "spotlight-beam"
+    }
+  ]
 }
