@@ -6,7 +6,11 @@
   "scripts": {
     "dev": "vite",
     "build": "tsc -b && vite build",
-    "preview": "vite preview"
+    "preview": "vite preview",
+    "design:lint": "npx @google/design.md lint DESIGN.md",
+    "design:diff": "npx @google/design.md diff DESIGN.md DESIGN-v2.md",
+    "design:export:tailwind": "npx @google/design.md export --format json-tailwind DESIGN.md",
+    "design:export:css": "npx @google/design.md export --format css-tailwind DESIGN.md"
   },
   "dependencies": {
     "@react-three/drei": "^9.122.0",

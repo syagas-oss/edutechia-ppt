@@ -1,5 +1,22 @@
 # React + TypeScript + Vite
 
+## DESIGN.md workflow
+
+This project now includes a root [`DESIGN.md`](./DESIGN.md) file to define design
+tokens and visual rationale in a machine-readable + human-readable format.
+
+Useful commands:
+
+```bash
+npm run design:lint
+npm run design:export:tailwind
+npm run design:export:css
+```
+
+Notes:
+- On Windows, run via `npx @google/design.md ...` or `designmd` from scripts.
+- Install CLI locally if needed: `npm install "@google/design.md"`.
+
 This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
 
 Currently, two official plugins are available:
