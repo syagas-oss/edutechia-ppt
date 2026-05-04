@@ -74,6 +74,7 @@ export interface Slide {
   callout?: string;
   decorations?: SlideDecoration[];
   visualStyle?: SlideVisualStyle;
+  density?: 'standard' | 'compact';
 }
 
 export interface SlideSection {

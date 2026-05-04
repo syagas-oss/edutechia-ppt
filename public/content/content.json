@@ -202,6 +202,7 @@
       "layoutVariant": "roadmap-horizon",
       "motionPreset": "sequence-build",
       "visualStyle": "lavender",
+      "density": "compact",
       "decorations": ["scribble"]
     },
     {
@@ -239,6 +240,7 @@
       "layoutVariant": "regulatory-table",
       "motionPreset": "axis-draw",
       "visualStyle": "lime",
+      "density": "compact",
       "decorations": ["radial"]
     },
     {
@@ -257,6 +259,7 @@
       "layoutVariant": "regulatory-table",
       "motionPreset": "reveal",
       "visualStyle": "lime",
+      "density": "compact",
       "decorations": ["frame"]
     },
     {
@@ -325,6 +328,7 @@
       "layoutVariant": "editorial-image-box",
       "motionPreset": "parallax",
       "visualStyle": "sunny",
+      "density": "compact",
       "decorations": ["radial"]
     },
     {
@@ -414,6 +418,7 @@
       "layoutVariant": "editorial-image-box",
       "motionPreset": "parallax",
       "visualStyle": "lime",
+      "density": "compact",
       "decorations": ["radial", "scribble"]
     },
     {
@@ -432,6 +437,7 @@
       "layoutVariant": "regulatory-table",
       "motionPreset": "axis-draw",
       "visualStyle": "lime",
+      "density": "compact",
       "decorations": ["frame"]
     },
     {
@@ -449,6 +455,7 @@
       "layoutVariant": "roadmap-horizon",
       "motionPreset": "axis-draw",
       "visualStyle": "sunny",
+      "density": "compact",
       "decorations": ["radial"]
     },
     {
@@ -485,6 +492,7 @@
       "layoutVariant": "editorial-image-box",
       "motionPreset": "sequence-build",
       "visualStyle": "pastel-cream",
+      "density": "compact",
       "decorations": ["frame"],
       "image": { "src": "/assets/reference/page_28.png", "alt": "Equipo referencia", "position": "left" }
     },
@@ -520,9 +528,10 @@
       ],
       "speakerNotes": "Plan temporal de crecimiento y despliegue.",
       "themeVariant": "act5",
-      "layoutVariant": "roadmap-horizon",
+      "layoutVariant": "roadmap-wow",
       "motionPreset": "sequence-build",
       "visualStyle": "lime",
+      "density": "compact",
       "decorations": ["scribble", "organic"]
     },
     {

@@ -1,3 +1,4 @@
+import { useState } from 'react';
 import { motion } from 'framer-motion';
 import * as Icons from 'lucide-react';
 import type { Card, Slide, SlideImage, SlideSection } from '../types';
@@ -6,6 +7,7 @@ type Props = {
   slide: Slide;
   buildIndex: number;
   staticMode?: boolean;
+  fadeIn?: boolean;
 };
 
 type LayoutProps = {
@@ -43,6 +45,12 @@ const PRESET_MOTION = {
   },
 } as const;
 
+const FADE_MOTION = {
+  initial: { opacity: 0 },
+  animate: { opacity: 1 },
+  transition: { duration: 0.66, ease: [0.2, 0.7, 0.2, 1] as const },
+} as const;
+
 const DENSE_TYPES = new Set(['ALERT', 'LIST', 'TIMELINE', 'ROADMAP']);
 
 const TYPE_LABELS: Record<string, string> = {
@@ -72,6 +80,13 @@ function getTypeLabel(type: string) {
   return TYPE_LABELS[type] ?? type.replace(/_/g, ' ');
 }
 
+function isCompactSlide(slide: Slide) {
+  return slide.density === 'compact'
+    || (slide.sections?.length ?? 0) >= 4
+    || (slide.items?.length ?? 0) >= 4
+    || (slide.cards?.length ?? 0) >= 3;
+}
+
 function visibleCount(total: number, buildIndex: number, builds?: string[]) {
   if (!builds || builds.length === 0) return total;
   return Math.max(1, Math.min(total, buildIndex + 1));
@@ -93,10 +108,10 @@ function renderListItems(items: Slide['items']) {
   );
 }
 
-function renderSections(sections?: SlideSection[]) {
+function renderSections(sections?: SlideSection[], compact = false) {
   if (!sections?.length) return null;
   return (
-    <div className="sections-stack">
+    <div className={`sections-stack ${compact ? 'fit-grid' : ''}`}>
       {sections.map((section, i) => (
         <article key={`${section.title ?? 'section'}-${i}`} className="section-card">
           {section.title ? <h3>{section.title}</h3> : null}
@@ -114,17 +129,55 @@ function renderSections(sections?: SlideSection[]) {
 
 function renderImage(image?: SlideImage, fallbackClass = '') {
   if (!image?.src) return null;
+  const src = image.src.startsWith('/')
+    ? `${import.meta.env.BASE_URL}${image.src.slice(1)}`
+    : image.src;
+  return <ResolvedImage src={src} alt={image.alt ?? 'Slide reference'} className={fallbackClass} />;
+}
+
+function ResolvedImage({ src, alt, className }: { src: string; alt: string; className: string }) {
+  const [hasError, setHasError] = useState(false);
+  if (hasError) return null;
   return (
-    <figure className={`media-frame ${fallbackClass}`}>
-      <img src={image.src} alt={image.alt ?? 'Slide reference'} loading="lazy" />
+    <figure className={`media-frame ${className}`}>
+      <img src={src} alt={alt} loading="lazy" onError={() => setHasError(true)} />
     </figure>
+  );
+}
+
+function renderStats(stats: Slide['stats']) {
+  if (!stats?.length) return null;
+  return (
+    <div className="stats-grid">
+      {stats.map((s, i) => (
+        <article key={`${s.l}-${i}`} className="panel metric-card">
+          <p className="metric-value">{s.v}</p>
+          <p className="metric-label">{s.l}</p>
+        </article>
+      ))}
+    </div>
+  );
+}
+
+function renderCards(cards?: Card[], compact = false) {
+  if (!cards?.length) return null;
+  return (
+    <div className={`cards-premium ${compact ? 'fit-grid' : ''}`}>
+      {cards.map((c, i) => (
+        <article key={`${c.t}-${i}`} className={`panel ${c.highlight ? 'card-emphasis' : ''}`}>
+          <h3>{c.t}</h3>
+          <p>{c.d}</p>
+        </article>
+      ))}
+    </div>
   );
 }
 
 function SlideStage({ slide, children }: { slide: Slide; children: React.ReactNode }) {
   const decorationClass = (slide.decorations ?? []).map((x) => `dec-${x}`).join(' ');
+  const densityClass = isCompactSlide(slide) ? 'dense-slide' : '';
   return (
-    <section className={`slide-shell slide-${String(slide.type).toLowerCase()} theme-${slide.themeVariant ?? 'act1'} layout-${slide.layoutVariant ?? 'default'} ${slide.emphasis === 'signature' ? 'signature' : ''} cue-${slide.visualCue ?? 'grid-waves'} style-${slide.visualStyle ?? 'pastel-cream'} ${decorationClass}`}>
+    <section className={`slide-shell slide-${String(slide.type).toLowerCase()} theme-${slide.themeVariant ?? 'act1'} layout-${slide.layoutVariant ?? 'default'} ${slide.emphasis === 'signature' ? 'signature' : ''} cue-${slide.visualCue ?? 'grid-waves'} style-${slide.visualStyle ?? 'pastel-cream'} ${decorationClass} ${densityClass}`}>
       <div className="atmo-layer" aria-hidden />
       <div className="kinetic-layer" aria-hidden />
       <header className="slide-topline">
@@ -190,13 +243,17 @@ function ProblemSplit({ slide }: LayoutProps) {
 
 function EditorialImageBox({ slide, countItems }: LayoutProps) {
   const items = slide.items?.slice(0, countItems);
+  const hasImage = Boolean(slide.image?.src);
+  const compact = isCompactSlide(slide);
   return (
     <div className="scene-wrap">
       <SlideHeading slide={slide} />
-      <div className="editorial-grid">
+      <div className={`editorial-grid ${hasImage ? '' : 'no-media'} ${compact ? 'compact-grid' : ''}`}>
         {slide.image?.position === 'right' ? null : renderImage(slide.image)}
         <div className="editorial-copy">
-          {renderSections(slide.sections)}
+          {renderSections(slide.sections, compact)}
+          {renderStats(slide.stats)}
+          {renderCards(slide.cards, compact)}
           {items?.length ? renderListItems(items) : null}
         </div>
         {slide.image?.position === 'right' ? renderImage(slide.image) : null}
@@ -255,6 +312,7 @@ function BenchmarkMap({ slide }: LayoutProps) {
 
 function RegulatoryTable({ slide, countCards }: LayoutProps) {
   const cards = slide.cards?.slice(0, countCards) ?? [];
+  const compact = isCompactSlide(slide);
   return (
     <div className="scene-wrap">
       <SlideHeading slide={slide} />
@@ -267,7 +325,7 @@ function RegulatoryTable({ slide, countCards }: LayoutProps) {
             </div>
           ))}
         </div>
-        <div className="risk-list">
+        <div className={`risk-list ${compact ? 'fit-grid' : ''}`}>
           {cards.map((c: Card, i) => (
             <article key={`${c.t}-${i}`} className={`risk-item ${c.highlight ? 'risk-critical' : ''}`}>
               <h3>{c.t}</h3>
@@ -288,7 +346,7 @@ function DemoStageDark({ slide }: LayoutProps) {
         <div className="video-device">
           {renderImage(slide.image, 'demo-image') ?? <><Icons.PlayCircle className="icon-lg" /><p>Demo Preview</p></>}
         </div>
-        <div className="video-callouts">{renderSections(slide.sections) ?? <><p>Entrada docente</p><p>Generacion IA</p><p>Validacion y feedback</p></>}</div>
+        <div className="video-callouts">{renderSections(slide.sections, true) ?? <><p>Entrada docente</p><p>Generacion IA</p><p>Validacion y feedback</p></>}</div>
       </div>
     </div>
   );
@@ -312,31 +370,32 @@ function RoadmapHorizon({ slide, countItems }: LayoutProps) {
   );
 }
 
-function GenericData({ slide, countCards, countItems }: LayoutProps) {
+function RoadmapWow({ slide, countItems }: LayoutProps) {
+  const items = (slide.items?.slice(0, countItems) ?? []).map((x) => (typeof x === 'string' ? { t: x, d: '' } : x));
   return (
     <div className="scene-wrap">
       <SlideHeading slide={slide} />
-      {slide.stats?.length ? (
-        <div className="stats-grid">
-          {slide.stats.map((s, i) => (
-            <article key={`${s.l}-${i}`} className="panel metric-card">
-              <p className="metric-value">{s.v}</p>
-              <p className="metric-label">{s.l}</p>
-            </article>
-          ))}
-        </div>
-      ) : null}
-      {(slide.cards?.slice(0, countCards) ?? []).length ? (
-        <div className="cards-premium">
-          {(slide.cards?.slice(0, countCards) ?? []).map((c, i) => (
-            <article key={`${c.t}-${i}`} className={`panel ${c.highlight ? 'card-emphasis' : ''}`}>
-              <h3>{c.t}</h3>
-              <p>{c.d}</p>
-            </article>
-          ))}
-        </div>
-      ) : null}
-      {renderSections(slide.sections)}
+      <div className="roadmap-wow">
+        <div className="roadmap-curve" aria-hidden />
+        {items.map((item, i) => (
+          <article key={`${item.t}-${i}`} className={`roadmap-stop stop-${i + 1}`}>
+            <span>{item.t}</span>
+            <h3>{item.d}</h3>
+          </article>
+        ))}
+      </div>
+    </div>
+  );
+}
+
+function GenericData({ slide, countCards, countItems }: LayoutProps) {
+  const cards = slide.cards?.slice(0, countCards);
+  return (
+    <div className="scene-wrap">
+      <SlideHeading slide={slide} />
+      {renderStats(slide.stats)}
+      {renderCards(cards, isCompactSlide(slide))}
+      {renderSections(slide.sections, isCompactSlide(slide))}
       {(slide.items?.slice(0, countItems) ?? []).length ? renderListItems(slide.items?.slice(0, countItems)) : null}
     </div>
   );
@@ -353,10 +412,13 @@ const LAYOUT_REGISTRY: Record<string, (props: LayoutProps) => JSX.Element> = {
   'regulatory-table': RegulatoryTable,
   'demo-stage-dark': DemoStageDark,
   'roadmap-horizon': RoadmapHorizon,
+  'roadmap-wow': RoadmapWow,
 };
 
-export default function SlideRenderer({ slide, buildIndex, staticMode = false }: Props) {
-  const preset = PRESET_MOTION[(slide.motionPreset as keyof typeof PRESET_MOTION) ?? 'reveal'] ?? PRESET_MOTION.reveal;
+export default function SlideRenderer({ slide, buildIndex, staticMode = false, fadeIn = false }: Props) {
+  const preset = fadeIn
+    ? FADE_MOTION
+    : PRESET_MOTION[(slide.motionPreset as keyof typeof PRESET_MOTION) ?? 'reveal'] ?? PRESET_MOTION.reveal;
   const countCards = visibleCount(slide.cards?.length ?? 0, buildIndex, slide.builds);
   const countItems = visibleCount(slide.items?.length ?? 0, buildIndex, slide.builds);
   const resolvedLayout = slide.layoutVariant ?? TYPE_LAYOUT_FALLBACK[String(slide.type)] ?? 'default';
