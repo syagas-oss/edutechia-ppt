@@ -201,6 +201,108 @@ function SlideHeading({ slide }: { slide: Slide }) {
   );
 }
 
+function SlideNumber({ n }: { n: number }) {
+  return <span className="big-step-number">{String(n).padStart(2, '0')}</span>;
+}
+
+function ThreeLineHero({ slide }: LayoutProps) {
+  const lines = slide.subtitle.split('|').map((line) => line.trim()).filter(Boolean);
+  return (
+    <div className="scene-wrap three-line-hero">
+      <div className="hero-claim-card">
+        <h1>{slide.title}</h1>
+        <div>
+          {lines.map((line, i) => <p key={`${line}-${i}`}>{line}</p>)}
+        </div>
+        {slide.callout ? <strong>{slide.callout}</strong> : null}
+      </div>
+      {renderImage(slide.image, 'hero-media')}
+    </div>
+  );
+}
+
+function VerticalColorCards({ slide, countCards }: LayoutProps) {
+  const cards = slide.cards?.slice(0, countCards) ?? [];
+  return (
+    <div className="scene-wrap">
+      <SlideHeading slide={slide} />
+      <div className="vertical-color-cards">
+        {cards.map((card, i) => (
+          <article key={`${card.t}-${i}`} className={`color-card color-card-${i + 1}`}>
+            <SlideNumber n={i + 1} />
+            <div>
+              <h3>{card.t}</h3>
+              <p>{card.d}</p>
+            </div>
+          </article>
+        ))}
+      </div>
+    </div>
+  );
+}
+
+function EmojiGridCards({ slide, countItems }: LayoutProps) {
+  const entries = (slide.items?.slice(0, countItems) ?? slide.sections ?? []).map((x) => (
+    typeof x === 'string' ? { t: x, d: '' } : 't' in x ? x : { t: x.title ?? '', d: x.body ?? '' }
+  ));
+  return (
+    <div className="scene-wrap">
+      <SlideHeading slide={slide} />
+      <div className={`emoji-grid-cards count-${entries.length}`}>
+        {entries.map((item, i) => (
+          <article key={`${item.t}-${i}`} className="emoji-card">
+            <span className="emoji-badge">{item.icon ?? ['🧑‍🏫', '⚙️', '✅', '🎯', '🛡️', '📌'][i % 6]}</span>
+            <h3>{item.t}</h3>
+            <p>{item.d}</p>
+          </article>
+        ))}
+      </div>
+    </div>
+  );
+}
+
+function TallMediaCards({ slide, countItems }: LayoutProps) {
+  const items = (slide.items?.slice(0, countItems) ?? slide.sections ?? []).map((x) => (
+    typeof x === 'string' ? { t: x, d: '' } : 't' in x ? x : { t: x.title ?? '', d: x.body ?? '' }
+  ));
+  return (
+    <div className="scene-wrap">
+      <SlideHeading slide={slide} />
+      <div className="tall-media-layout">
+        {renderImage(slide.image, 'tall-reference-image')}
+        <div className="tall-card-stack">
+          {items.map((item, i) => (
+            <article key={`${item.t}-${i}`} className={`tall-card tall-card-${i + 1}`}>
+              <h3>{item.t}</h3>
+              <p>{item.d}</p>
+            </article>
+          ))}
+        </div>
+      </div>
+    </div>
+  );
+}
+
+function ThreeBigColumns({ slide }: LayoutProps) {
+  const entries = (slide.sections ?? slide.cards ?? []).map((x) => (
+    'body' in x ? { t: x.title ?? '', d: x.body ?? '' } : { t: x.t, d: x.d, icon: x.icon }
+  ));
+  return (
+    <div className="scene-wrap">
+      <SlideHeading slide={slide} />
+      <div className="three-big-columns">
+        {entries.slice(0, 3).map((item, i) => (
+          <article key={`${item.t}-${i}`}>
+            <span>{item.icon ?? ['✨', '🧩', '🚀'][i]}</span>
+            <h3>{item.t}</h3>
+            <p>{item.d}</p>
+          </article>
+        ))}
+      </div>
+    </div>
+  );
+}
+
 function HeroCinematicV2({ slide }: LayoutProps) {
   return (
     <div className="scene-wrap layout-problem-split">
@@ -287,11 +389,11 @@ function BenefitsTimeline({ slide, countItems }: LayoutProps) {
 
 function BenchmarkMap({ slide }: LayoutProps) {
   const points = [
-    { label: 'A', x: 20, y: 62 },
-    { label: 'B', x: 34, y: 46 },
-    { label: 'C', x: 48, y: 58 },
-    { label: 'D', x: 59, y: 40 },
-    { label: 'E', x: 72, y: 52 },
+    { label: 'A', x: 20, y: 62, title: 'Worksheets / fichas', desc: 'Recursos estaticos: Twinkl, Liveworksheets.' },
+    { label: 'B', x: 34, y: 46, title: 'Practica gamificada', desc: 'Kahoot!, Quizizz, Wordwall.' },
+    { label: 'C', x: 48, y: 58, title: 'LMS / aula digital', desc: 'Google Classroom, Moodle, Teams.' },
+    { label: 'D', x: 59, y: 40, title: 'Tutoria adaptativa', desc: 'Khan Academy, Matific, Smartick.' },
+    { label: 'E', x: 72, y: 52, title: 'IA generativa educativa', desc: 'MagicSchool, Diffit, Eduaide.' },
   ];
   return (
     <div className="scene-wrap">
@@ -304,7 +406,195 @@ function BenchmarkMap({ slide }: LayoutProps) {
           {points.map((p) => <span key={p.label} className="market-point" style={{ left: `${p.x}%`, top: `${p.y}%` }}>{p.label}</span>)}
           <div className="opportunity-zone">Opportunity Space - eduTechIA</div>
         </div>
-        <div>{renderSections(slide.sections)}{renderListItems(slide.items)}</div>
+        <div className="benchmark-legend">
+          {points.map((p) => (
+            <article key={p.label}>
+              <strong>{p.label}</strong>
+              <span>{p.title}</span>
+              <p>{p.desc}</p>
+            </article>
+          ))}
+        </div>
+      </div>
+    </div>
+  );
+}
+
+function NorthStarHero({ slide }: LayoutProps) {
+  return (
+    <div className="scene-wrap north-star-layout">
+      <div className="north-star-symbol" aria-hidden>★</div>
+      <div className="north-star-copy">
+        <p>North Star</p>
+        <h1>{slide.subtitle}</h1>
+      </div>
+      {renderStats(slide.stats)}
+    </div>
+  );
+}
+
+function ArrowFlow({ slide, countItems }: LayoutProps) {
+  const items = (slide.items?.slice(0, countItems) ?? []).map((x) => (typeof x === 'string' ? { t: x, d: '' } : x));
+  return (
+    <div className="scene-wrap">
+      <SlideHeading slide={slide} />
+      <div className="arrow-flow">
+        {items.map((item, i) => (
+          <article key={`${item.t}-${i}`}>
+            <span className="flow-emoji">{item.icon ?? ['🧑‍🏫', '🧠', '📝', '👧', '📊', '🧭', '✅'][i % 7]}</span>
+            <h3>{item.t}</h3>
+            <p>{item.d}</p>
+            {i < items.length - 1 ? <span className="flow-arrow">→</span> : null}
+          </article>
+        ))}
+      </div>
+    </div>
+  );
+}
+
+function LayerStackVertical({ slide }: LayoutProps) {
+  return (
+    <div className="scene-wrap">
+      <SlideHeading slide={slide} />
+      <div className="layer-stack-vertical">
+        {(slide.sections ?? []).map((section, i) => (
+          <article key={`${section.title}-${i}`}>
+            <SlideNumber n={i + 1} />
+            <div>
+              <h3>{section.title}</h3>
+              <p>{section.body}</p>
+            </div>
+            {i < (slide.sections?.length ?? 0) - 1 ? <span className="layer-arrow">↓</span> : null}
+          </article>
+        ))}
+      </div>
+    </div>
+  );
+}
+
+function JourneySteps({ slide }: LayoutProps) {
+  return (
+    <div className="scene-wrap">
+      <SlideHeading slide={slide} />
+      <div className="journey-layout">
+        <div className="journey-steps">
+          {(slide.sections ?? []).map((section, i) => (
+            <article key={`${section.title}-${i}`}>
+              <SlideNumber n={i + 1} />
+              <h3>{section.title}</h3>
+              <p>{section.body}</p>
+              {i < (slide.sections?.length ?? 0) - 1 ? <span>→</span> : null}
+            </article>
+          ))}
+        </div>
+        {slide.callout ? (
+          <a className="demo-link-cta" href={slide.callout} target="_blank" rel="noreferrer">
+            <span>Probar demo</span>
+            <strong>{slide.callout}</strong>
+          </a>
+        ) : null}
+      </div>
+    </div>
+  );
+}
+
+function DisruptiveHero({ slide }: LayoutProps) {
+  return (
+    <div className="scene-wrap disruptive-hero">
+      <div className="impact-orbit" aria-hidden />
+      <div className="impact-copy">
+        <p>{slide.title}</p>
+        <h1>{slide.subtitle}</h1>
+        {slide.highlight ? <strong>{slide.highlight}</strong> : null}
+      </div>
+      {slide.callout ? <div className="impact-callout">{slide.callout}</div> : null}
+    </div>
+  );
+}
+
+function ComplianceMatrix({ slide }: LayoutProps) {
+  const rows = slide.sections ?? [];
+  return (
+    <div className="scene-wrap compliance-matrix-layout">
+      <SlideHeading slide={slide} />
+      <div className="compliance-table">
+        <div className="compliance-head"><b>Normativa</b><b>Impacto</b><b>Plazo critico</b><b>Aplicacion en PoC</b></div>
+        {rows.map((row, i) => {
+          const parts = (row.body ?? '').split('|').map((x) => x.trim());
+          return (
+            <div className="compliance-row" key={`${row.title}-${i}`}>
+              <strong>{row.title}</strong>
+              <b className={`impact impact-${i}`}>{parts[0]}</b>
+              <span>{parts[1]}</span>
+              <p>{parts[2]}</p>
+            </div>
+          );
+        })}
+      </div>
+    </div>
+  );
+}
+
+function FullImageSlide({ slide }: LayoutProps) {
+  return (
+    <div className="scene-wrap full-image-layout">
+      <SlideHeading slide={slide} />
+      {renderImage(slide.image, 'full-bleed-image')}
+    </div>
+  );
+}
+
+function PricingReplica({ slide }: LayoutProps) {
+  const cards = slide.cards ?? [];
+  return (
+    <div className="scene-wrap pricing-replica">
+      <SlideHeading slide={slide} />
+      <div className="pricing-body">
+        <div className="pricing-device">
+          <div className="phone-frame">
+            <div className="phone-notch" />
+            <div className="phone-card dark">Plan<br /><b>Centro</b></div>
+            <div className="phone-card orange">IA<br /><b>Activa</b></div>
+            <div className="phone-list" />
+            <div className="phone-list short" />
+          </div>
+          <div className="brand-ribbon">eduTechIA</div>
+        </div>
+        <div className="pricing-list">
+          {cards.map((card, i) => (
+            <article key={`${card.t}-${i}`} className={card.highlight ? 'featured' : ''}>
+              <SlideNumber n={i + 1} />
+              <div>
+                <h3>{card.t}</h3>
+                <p>{card.d}</p>
+              </div>
+            </article>
+          ))}
+        </div>
+      </div>
+    </div>
+  );
+}
+
+function FinanceBars({ slide }: LayoutProps) {
+  const bars = [
+    { label: 'Ano 1', value: '115k', h: 26 },
+    { label: 'Ano 2', value: '428k', h: 52 },
+    { label: 'Ano 3', value: '1.81M', h: 92 },
+  ];
+  return (
+    <div className="scene-wrap finance-bars-layout">
+      <SlideHeading slide={slide} />
+      <div className="finance-content">
+        <div className="finance-stat-row">{renderStats(slide.stats)}</div>
+        <div className="bar-chart-panel">
+          {bars.map((bar) => (
+            <article key={bar.label}>
+              <div className="bar" style={{ height: `${bar.h}%` }}><strong>{bar.value}</strong></div>
+              <span>{bar.label}</span>
+            </article>
+          ))}
+        </div>
       </div>
     </div>
   );
@@ -413,6 +703,20 @@ const LAYOUT_REGISTRY: Record<string, (props: LayoutProps) => JSX.Element> = {
   'demo-stage-dark': DemoStageDark,
   'roadmap-horizon': RoadmapHorizon,
   'roadmap-wow': RoadmapWow,
+  'three-line-hero': ThreeLineHero,
+  'vertical-color-cards': VerticalColorCards,
+  'emoji-grid-cards': EmojiGridCards,
+  'tall-media-cards': TallMediaCards,
+  'three-big-columns': ThreeBigColumns,
+  'north-star-hero': NorthStarHero,
+  'arrow-flow': ArrowFlow,
+  'layer-stack-vertical': LayerStackVertical,
+  'journey-steps': JourneySteps,
+  'disruptive-hero': DisruptiveHero,
+  'compliance-matrix': ComplianceMatrix,
+  'full-image-slide': FullImageSlide,
+  'pricing-replica': PricingReplica,
+  'finance-bars': FinanceBars,
 };
 
 export default function SlideRenderer({ slide, buildIndex, staticMode = false, fadeIn = false }: Props) {

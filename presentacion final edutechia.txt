@@ -1,0 +1,11 @@
+Hola,
+
+La presentación que vamos a mostrar en la final será la versión online de la misma que está en el PDF adjunto, pero con una experiencia más interactiva.
+
+Tanto el PDF como la versión web disponible en este enlace https://syagas-oss.github.io/edutechia-ppt/ contienen el mismo contenido, aunque el diseño puede variar levemente para hacer la navegación más dinámica e interactiva.
+
+Recomendamos verla desde la versión web en desktop para tener la mejor experiencia.
+
+Gracias!
+
+Equipo eduTechIA

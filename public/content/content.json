@@ -14,7 +14,10 @@
       "emphasis": "signature",
       "visualCue": "spotlight-beam",
       "visualStyle": "lavender",
-      "decorations": ["radial", "organic"],
+      "decorations": [
+        "radial",
+        "organic"
+      ],
       "image": {
         "src": "/assets/reference/page_01.png",
         "alt": "Portada referencia",
@@ -25,15 +28,17 @@
       "id": 2,
       "type": "HERO",
       "title": "30 alumnos, 1 docente",
-      "subtitle": "Multiples necesidades y poco tiempo de adaptacion",
+      "subtitle": "30 alumnos | 1 docente | poco tiempo para adaptar",
       "callout": "El reto no es saber adaptar; es tener tiempo material para hacerlo bien para todos.",
       "speakerNotes": "Slide emocional para encuadrar el problema en el aula.",
       "themeVariant": "act1",
-      "layoutVariant": "problem-split",
+      "layoutVariant": "three-line-hero",
       "motionPreset": "spotlight",
       "emphasis": "signature",
       "visualStyle": "sunny",
-      "decorations": ["organic"],
+      "decorations": [
+        "organic"
+      ],
       "image": {
         "src": "/assets/reference/page_03.png",
         "alt": "Problema referencia",
@@ -61,10 +66,13 @@
       ],
       "speakerNotes": "Definir el reto y cuidar el lenguaje: perfiles pedagogicos, no etiquetas clinicas.",
       "themeVariant": "act1",
-      "layoutVariant": "editorial-image-box",
+      "layoutVariant": "vertical-color-cards",
       "motionPreset": "reveal",
       "visualStyle": "pastel-cream",
-      "decorations": ["radial", "frame"],
+      "decorations": [
+        "radial",
+        "frame"
+      ],
       "image": {
         "src": "/assets/reference/page_05.png",
         "alt": "Reto referencia",
@@ -79,33 +87,39 @@
       "items": [
         {
           "t": "Input docente",
-          "d": "Curso, tema, duracion y perfil pedagogico."
+          "d": "Curso, tema, duracion y perfil pedagogico.",
+          "icon": "?????"
         },
         {
           "t": "Generacion IA",
-          "d": "Actividad breve, pasos guiados, adaptacion y feedback sugerido."
+          "d": "Actividad breve, pasos guiados, adaptacion y feedback sugerido.",
+          "icon": "??"
         },
         {
           "t": "Revision docente",
-          "d": "El profesor ajusta la propuesta antes de usarla."
+          "d": "El profesor ajusta la propuesta antes de usarla.",
+          "icon": "?"
         },
         {
           "t": "Control pedagogico",
-          "d": "La decision final sigue siendo humana."
+          "d": "La decision final sigue siendo humana.",
+          "icon": "??"
         }
       ],
-      "builds": ["1", "2", "3", "4"],
+      "builds": [
+        "1",
+        "2",
+        "3",
+        "4"
+      ],
       "speakerNotes": "Explicar la formula simple: input docente -> output revisable.",
       "themeVariant": "act2",
-      "layoutVariant": "editorial-image-box",
+      "layoutVariant": "emoji-grid-cards",
       "motionPreset": "sequence-build",
       "visualStyle": "sunny",
-      "decorations": ["radial"],
-      "image": {
-        "src": "/assets/reference/page_06.png",
-        "alt": "Propuesta referencia",
-        "position": "right"
-      }
+      "decorations": [
+        "radial"
+      ]
     },
     {
       "id": 5,
@@ -128,10 +142,13 @@
       ],
       "speakerNotes": "Traducir la propuesta a valor operativo para docente y centro.",
       "themeVariant": "act2",
-      "layoutVariant": "benefits-timeline",
+      "layoutVariant": "tall-media-cards",
       "motionPreset": "parallax",
       "visualStyle": "pastel-cream",
-      "decorations": ["radial", "organic"],
+      "decorations": [
+        "radial",
+        "organic"
+      ],
       "image": {
         "src": "/assets/reference/page_07.png",
         "alt": "Beneficios referencia",
@@ -146,28 +163,25 @@
       "sections": [
         {
           "title": "Generacion pedagogica asistida",
-          "body": "Produce actividades, pasos guiados y sugerencias de feedback para revision docente."
+          "body": "Produce actividades, pasos guiados, adaptaciones por perfil y sugerencias de feedback. El docente recibe una primera version util en lugar de partir desde una hoja en blanco."
         },
         {
           "title": "Perfilado pedagogico flexible",
-          "body": "Interpreta nivel, dificultad y contexto sin usar etiquetas clinicas."
+          "body": "Interpreta curso, dificultad, ritmo e intereses para ajustar la actividad. Trabaja con perfiles pedagogicos, no con diagnosticos clinicos."
         },
         {
           "title": "PoC actual y futuro",
-          "body": "Hoy propone una actividad revisable; mas adelante recomendara el siguiente paso segun progreso."
+          "body": "Hoy propone una actividad revisable y medible. En producto podra recomendar repetir, simplificar o avanzar segun evidencias de progreso."
         }
       ],
       "speakerNotes": "Aterrizar el valor real de la IA con un ejemplo simple y sin diagnosticos.",
       "themeVariant": "act2",
-      "layoutVariant": "editorial-image-box",
+      "layoutVariant": "three-big-columns",
       "motionPreset": "parallax",
       "visualStyle": "pastel-cream",
-      "decorations": ["frame"],
-      "image": {
-        "src": "/assets/reference/page_08.png",
-        "alt": "Valor IA referencia",
-        "position": "left"
-      }
+      "decorations": [
+        "frame"
+      ]
     },
     {
       "id": 7,
@@ -200,13 +214,15 @@
       "motionPreset": "axis-draw",
       "emphasis": "signature",
       "visualStyle": "lavender",
-      "decorations": ["radial"]
+      "decorations": [
+        "radial"
+      ]
     },
     {
       "id": 8,
       "type": "BENTO_DATA",
       "title": "North Star: Nuestra vision",
-      "subtitle": "Reducir tiempo sin perder calidad ni control",
+      "subtitle": "Reducir el tiempo que necesita un docente para preparar actividades adaptadas, manteniendo calidad pedagogica, control humano y seguridad en el uso de IA",
       "stats": [
         {
           "v": "KPI 1",
@@ -228,15 +244,13 @@
       ],
       "speakerNotes": "Definir la metrica guia y las tres variables clave del exito.",
       "themeVariant": "act2",
-      "layoutVariant": "editorial-image-box",
+      "layoutVariant": "north-star-hero",
       "motionPreset": "parallax",
       "visualStyle": "lime",
-      "decorations": ["organic", "scribble"],
-      "image": {
-        "src": "/assets/reference/page_10.png",
-        "alt": "North star referencia",
-        "position": "right"
-      }
+      "decorations": [
+        "organic",
+        "scribble"
+      ]
     },
     {
       "id": 9,
@@ -245,41 +259,50 @@
       "subtitle": "Del input docente a la validacion humana",
       "items": [
         {
-          "t": "1. Docente",
-          "d": "Define necesidad pedagogica, tema, nivel y perfil."
+          "t": "Docente",
+          "d": "Define necesidad pedagogica, tema, nivel y perfil.",
+          "icon": "?????"
         },
         {
-          "t": "2. Motor IA",
-          "d": "Interpreta la necesidad y aplica criterios pedagogicos."
+          "t": "Motor IA",
+          "d": "Interpreta la necesidad y aplica criterios pedagogicos.",
+          "icon": "??"
         },
         {
-          "t": "3. Generacion",
-          "d": "Crea actividad, pasos guiados, adaptaciones y feedback."
+          "t": "Generacion",
+          "d": "Crea actividad, pasos guiados, adaptaciones y feedback.",
+          "icon": "??"
         },
         {
-          "t": "4. Alumno",
-          "d": "En fase futura, realiza la actividad dentro de la herramienta."
+          "t": "Alumno",
+          "d": "En fase futura, realiza la actividad dentro de la herramienta.",
+          "icon": "??"
         },
         {
-          "t": "5. Analisis",
-          "d": "En fase futura, analiza aciertos, errores y dificultades."
+          "t": "Analisis",
+          "d": "En fase futura, analiza aciertos, errores y dificultades.",
+          "icon": "??"
         },
         {
-          "t": "6. Recomendacion",
-          "d": "Sugiere repetir, simplificar o avanzar segun progreso."
+          "t": "Recomendacion",
+          "d": "Sugiere repetir, simplificar o avanzar segun progreso.",
+          "icon": "??"
         },
         {
-          "t": "7. Validacion docente",
-          "d": "La decision final sigue siendo humana."
+          "t": "Validacion docente",
+          "d": "La decision final sigue siendo humana.",
+          "icon": "?"
         }
       ],
       "speakerNotes": "La PoC valida los pasos 1, 2, 3 y 7; los demas quedan para evolucion.",
       "themeVariant": "act2",
-      "layoutVariant": "roadmap-horizon",
+      "layoutVariant": "arrow-flow",
       "motionPreset": "sequence-build",
       "visualStyle": "lavender",
       "density": "compact",
-      "decorations": ["scribble"]
+      "decorations": [
+        "scribble"
+      ]
     },
     {
       "id": 10,
@@ -306,15 +329,12 @@
       ],
       "speakerNotes": "En fases posteriores se incorporan ElevenLabs, Pinecone y capas de trazabilidad mas completas.",
       "themeVariant": "act2",
-      "layoutVariant": "editorial-image-box",
+      "layoutVariant": "layer-stack-vertical",
       "motionPreset": "parallax",
       "visualStyle": "pastel-cream",
-      "decorations": ["frame"],
-      "image": {
-        "src": "/assets/reference/page_13.png",
-        "alt": "Arquitectura referencia",
-        "position": "right"
-      }
+      "decorations": [
+        "frame"
+      ]
     },
     {
       "id": 11,
@@ -336,16 +356,14 @@
         }
       ],
       "speakerNotes": "Mostrar una demo corta y clara. Si la UI no carga, contar el flujo en voz alta.",
+      "callout": "https://edutechia.vercel.app/",
       "themeVariant": "act4",
-      "layoutVariant": "demo-stage-dark",
+      "layoutVariant": "journey-steps",
       "motionPreset": "reveal",
-      "visualStyle": "demo-dark",
-      "decorations": ["frame"],
-      "image": {
-        "src": "/assets/reference/page_21.png",
-        "alt": "Demo frontend referencia",
-        "position": "center"
-      }
+      "visualStyle": "pastel-cream",
+      "decorations": [
+        "frame"
+      ]
     },
     {
       "id": 12,
@@ -368,10 +386,12 @@
       ],
       "speakerNotes": "Conectar viabilidad tecnica, pedagogica y legal.",
       "themeVariant": "act3",
-      "layoutVariant": "editorial-image-box",
+      "layoutVariant": "tall-media-cards",
       "motionPreset": "reveal",
       "visualStyle": "pastel-cream",
-      "decorations": ["organic"],
+      "decorations": [
+        "organic"
+      ],
       "image": {
         "src": "/assets/reference/page_18.png",
         "alt": "Viabilidad referencia",
@@ -417,41 +437,45 @@
       ],
       "sections": [
         {
-          "body": "La hipotesis central es simple: la IA debe ayudar al docente a generar ejercicios adaptados mas rapido y con calidad suficiente, sin aumentar su carga de trabajo."
+          "title": "Calidad pedagogica >=3.5/5",
+          "body": "Evaluacion del docente en claridad, nivel, estructura paso a paso y adecuacion al perfil. Si la calidad cae, se revisa prompt, criterios y proveedor."
+        },
+        {
+          "title": "Tiempo docente <=5 min",
+          "body": "Medimos el flujo completo: definir necesidad, generar, revisar y aprobar. Si supera 10 minutos, la PoC se detiene y se redise?a."
+        },
+        {
+          "title": "Satisfaccion >=4/5",
+          "body": "Encuesta tras cada sesion: ahorro de tiempo, sensacion de control y confianza en usar la actividad en clase."
         }
       ],
       "speakerNotes": "Definir criterios cuantitativos, hipotesis y kill-switch.",
       "themeVariant": "act3",
-      "layoutVariant": "editorial-image-box",
+      "layoutVariant": "three-big-columns",
       "motionPreset": "parallax",
       "visualStyle": "sunny",
       "density": "compact",
-      "decorations": ["radial"],
-      "image": {
-        "src": "/assets/reference/page_19.png",
-        "alt": "Metricas referencia",
-        "position": "right"
-      }
+      "decorations": [
+        "radial"
+      ]
     },
     {
       "id": 14,
       "type": "KINETIC_BRIDGE",
       "title": "Diferencial clave de eduTechIA",
-      "subtitle": "No solo genera ejercicios: adapta la actividad a criterios pedagogicos concretos",
-      "highlight": "Nivel, ritmo, carga cognitiva y refuerzo positivo",
-      "callout": "La IA no etiqueta: propone apoyos pedagogicos que el docente revisa.",
+      "subtitle": "No genera mas contenido. Reduce carga docente con adaptacion pedagogica controlada.",
+      "highlight": "Nivel ? ritmo ? carga cognitiva ? refuerzo positivo",
+      "callout": "La IA no etiqueta. El docente decide.",
       "speakerNotes": "Mensaje puente antes de entrar en seguridad y regulacion.",
       "themeVariant": "act4",
-      "layoutVariant": "problem-split",
+      "layoutVariant": "disruptive-hero",
       "motionPreset": "reveal",
       "emphasis": "signature",
       "visualStyle": "lime",
-      "decorations": ["radial", "organic"],
-      "image": {
-        "src": "/assets/reference/page_20.png",
-        "alt": "Diferencial referencia",
-        "position": "right"
-      }
+      "decorations": [
+        "radial",
+        "organic"
+      ]
     },
     {
       "id": 15,
@@ -460,16 +484,20 @@
       "subtitle": "RGPD, AI Act y LOPDGDD aplicados a la PoC",
       "sections": [
         {
-          "title": "RGPD",
-          "body": "Minimizacion de datos y finalidad educativa explicita."
+          "title": "AI Act (UE) 2024/1689",
+          "body": "MUY ALTO | Agosto 2026 | Potencial encaje como sistema de alto riesgo si influye en evaluacion, trayectoria educativa o decisiones sobre alumnado. La PoC evita decision automatica y usa perfiles ficticios; si escala, requiere documentacion tecnica, registro UE y evaluacion de conformidad."
         },
         {
-          "title": "AI Act",
-          "body": "Supervision humana y transparencia de uso de IA."
+          "title": "RGPD (UE) 2016/679",
+          "body": "MUY ALTO | Ya vigente | PoC con perfiles ficticios: minimiza riesgos de proteccion de datos. Piloto real con menores: requiere base legal, minimizacion, informacion a familias y evaluacion de impacto si aplica."
         },
         {
-          "title": "LOPDGDD",
-          "body": "Proteccion reforzada para datos de menores."
+          "title": "LOPDGDD 3/2018",
+          "body": "ALTO | Ya vigente | En uso real con menores: revisar base juridica, informacion a familias, rol del centro educativo y participacion del DPD si corresponde."
+        },
+        {
+          "title": "Normativa CM Educacion",
+          "body": "MEDIO | Antes del piloto | Notificar al orientador del centro antes de cualquier piloto real y solicitar autorizacion del equipo directivo o Consejeria si corresponde."
         }
       ],
       "cards": [
@@ -480,11 +508,13 @@
       ],
       "speakerNotes": "Bajar la regulacion a tres ideas faciles de explicar.",
       "themeVariant": "act3",
-      "layoutVariant": "regulatory-table",
+      "layoutVariant": "compliance-matrix",
       "motionPreset": "reveal",
       "visualStyle": "lime",
       "density": "compact",
-      "decorations": ["frame"]
+      "decorations": [
+        "frame"
+      ]
     },
     {
       "id": 16,
@@ -494,47 +524,51 @@
       "sections": [
         {
           "title": "Supervision humana",
-          "body": "En PoC el docente revisa antes de usar; en producto la aprobacion sera obligatoria."
+          "body": "En PoC el docente revisa antes de usar; en producto la aprobacion sera obligatoria.",
+          "icon": "?????"
         },
         {
           "title": "Anonimizacion estructural",
-          "body": "La validacion inicial usa perfiles ficticios y luego identificadores anonimos."
+          "body": "La validacion inicial usa perfiles ficticios y luego identificadores anonimos.",
+          "icon": "???"
         },
         {
           "title": "Sin diagnosticos medicos",
-          "body": "Solo perfiles pedagogicos, nunca etiquetas clinicas."
+          "body": "Solo perfiles pedagogicos, nunca etiquetas clinicas.",
+          "icon": "??"
         },
         {
           "title": "Control de calidad",
-          "body": "Si mas del 30% de actividades son rechazadas, se revisan prompt, criterios y proveedor."
+          "body": "Si mas del 30% de actividades son rechazadas, se revisan prompt, criterios y proveedor.",
+          "icon": "??"
         },
         {
           "title": "Transparencia ante familias",
-          "body": "Cada ejercicio se acompana de la nota: generado con IA y revisado por docente."
+          "body": "Cada ejercicio se acompana de la nota: generado con IA y revisado por docente.",
+          "icon": "???"
         },
         {
           "title": "Sin etiquetado permanente",
-          "body": "Los perfiles se revisan periodicamente y no quedan fijados para siempre."
+          "body": "Los perfiles se revisan periodicamente y no quedan fijados para siempre.",
+          "icon": "??"
         }
       ],
       "speakerNotes": "Los guardarrailes cubren riesgo humano, pedagogico, legal y tecnico.",
       "themeVariant": "act5",
-      "layoutVariant": "editorial-image-box",
+      "layoutVariant": "emoji-grid-cards",
       "motionPreset": "parallax",
       "visualStyle": "lime",
       "density": "compact",
-      "decorations": ["radial", "scribble"],
-      "image": {
-        "src": "/assets/reference/page_24.png",
-        "alt": "Guardarrailes referencia",
-        "position": "right"
-      }
+      "decorations": [
+        "radial",
+        "scribble"
+      ]
     },
     {
       "id": 18,
       "type": "BENTO_GRID",
       "title": "Equipo",
-      "subtitle": "Plan de crecimiento por semestres",
+      "subtitle": "Gantt eduTechIA - Equipo",
       "cards": [
         {
           "t": "H1 Y1",
@@ -572,22 +606,24 @@
         }
       ],
       "image": {
-        "src": "/assets/reference/page_17_alt.png",
-        "alt": "Equipo referencia",
-        "position": "left"
+        "src": "/assets/reference/gantt_equipo.png",
+        "alt": "Gantt equipo",
+        "position": "center"
       },
       "speakerNotes": "Explicar el equipo como un plan realista de capacidad y no solo como organigrama.",
       "themeVariant": "act5",
-      "layoutVariant": "editorial-image-box",
+      "layoutVariant": "full-image-slide",
       "motionPreset": "parallax",
       "visualStyle": "pastel-cream",
-      "decorations": ["frame"]
+      "decorations": [
+        "frame"
+      ]
     },
     {
       "id": 19,
       "type": "LIST",
       "title": "Stack Tecnologico",
-      "subtitle": "Del MVP al producto escalado",
+      "subtitle": "Gantt eduTechIA - Stack tecnologico",
       "sections": [
         {
           "title": "PoC",
@@ -607,16 +643,18 @@
         }
       ],
       "image": {
-        "src": "/assets/reference/page_17.png",
-        "alt": "Stack tecnologico referencia",
-        "position": "right"
+        "src": "/assets/reference/gantt_stack.png",
+        "alt": "Gantt stack tecnologico",
+        "position": "center"
       },
       "speakerNotes": "Agrupar la tecnologia en cuatro bloques para no sobrecargar la slide.",
       "themeVariant": "act5",
-      "layoutVariant": "editorial-image-box",
+      "layoutVariant": "full-image-slide",
       "motionPreset": "reveal",
       "visualStyle": "pastel-cream",
-      "decorations": ["organic"]
+      "decorations": [
+        "organic"
+      ]
     },
     {
       "id": 20,
@@ -639,11 +677,30 @@
       ],
       "speakerNotes": "La progresion Madrid -> Espana -> Internacional explica la entrada, la expansion y la rentabilidad.",
       "themeVariant": "act5",
-      "layoutVariant": "roadmap-horizon",
+      "layoutVariant": "three-big-columns",
       "motionPreset": "axis-draw",
       "visualStyle": "sunny",
       "density": "compact",
-      "decorations": ["radial"]
+      "decorations": [
+        "radial"
+      ],
+      "sections": [
+        {
+          "title": "PoC",
+          "body": "React + Vite + Tailwind para frontend, n8n para orquestar el flujo, Supabase para persistencia inicial y OpenRouter como capa de acceso a modelos.",
+          "icon": "??"
+        },
+        {
+          "title": "Crecimiento",
+          "body": "Azure OpenAI, PostgreSQL gestionado y Kubernetes solo cuando el volumen lo justifique. La infraestructura escala con pilotos, no antes.",
+          "icon": "??"
+        },
+        {
+          "title": "Seguridad y futuro",
+          "body": "Cloudflare WAF, Datadog, trazabilidad, control de acceso, modelo fine-tuned, multi-idioma e integraciones LMS.",
+          "icon": "???"
+        }
+      ]
     },
     {
       "id": 21,
@@ -667,15 +724,12 @@
       ],
       "speakerNotes": "El pricing es B2B por centro y conecta directamente con los tres horizontes.",
       "themeVariant": "act5",
-      "layoutVariant": "editorial-image-box",
+      "layoutVariant": "pricing-replica",
       "motionPreset": "reveal",
       "visualStyle": "sunny",
-      "decorations": ["scribble"],
-      "image": {
-        "src": "/assets/reference/page_27.png",
-        "alt": "Planes referencia",
-        "position": "right"
-      }
+      "decorations": [
+        "scribble"
+      ]
     },
     {
       "id": 22,
@@ -709,10 +763,12 @@
       ],
       "speakerNotes": "Cerrar la logica economica con una secuencia clara de inversion, crecimiento y rentabilidad.",
       "themeVariant": "act5",
-      "layoutVariant": "editorial-image-box",
+      "layoutVariant": "finance-bars",
       "motionPreset": "parallax",
       "visualStyle": "sunny",
-      "decorations": ["radial"],
+      "decorations": [
+        "radial"
+      ],
       "image": {
         "src": "/assets/reference/page_29.png",
         "alt": "Economia referencia",
@@ -723,21 +779,19 @@
       "id": 23,
       "type": "HERO_FINAL",
       "title": "eduTechIA esta lista para el siguiente paso",
-      "subtitle": "Segura, viable, rentable y escalable",
-      "highlight": "www.edutechia.com | contacto@edutechia.com | @edutechia",
-      "callout": "Cierre: impacto pedagogico con gobierno responsable de IA.",
+      "subtitle": "Del aula al producto escalable: IA util, segura y con control docente.",
+      "highlight": "eduTechIA esta lista para el siguiente paso",
+      "callout": "Menos tiempo preparando. Mas criterio pedagogico en accion.",
       "speakerNotes": "Cerrar con una frase de futuro que conecte PoC, piloto y escalado.",
       "themeVariant": "act5",
-      "layoutVariant": "problem-split",
+      "layoutVariant": "disruptive-hero",
       "motionPreset": "spotlight",
       "emphasis": "signature",
       "visualStyle": "lavender",
-      "decorations": ["radial", "organic"],
-      "image": {
-        "src": "/assets/reference/page_31.png",
-        "alt": "Cierre referencia",
-        "position": "right"
-      }
+      "decorations": [
+        "radial",
+        "organic"
+      ]
     }
   ]
 }
