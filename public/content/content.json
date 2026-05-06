@@ -150,7 +150,7 @@
         "organic"
       ],
       "image": {
-        "src": "/assets/reference/page_07.png",
+        "src": "/assets/reference/page_06.png",
         "alt": "Beneficios referencia",
         "position": "left"
       }
@@ -393,7 +393,7 @@
         "organic"
       ],
       "image": {
-        "src": "/assets/reference/page_18.png",
+        "src": "/assets/reference/page_08.png",
         "alt": "Viabilidad referencia",
         "position": "left"
       }
@@ -663,15 +663,15 @@
       "subtitle": "Escalado por fases con mejora financiera",
       "items": [
         {
-          "t": "Ano 1 - Madrid",
+          "t": "Año 1 - Madrid",
           "d": "35 colegios, 115k EUR ingresos, -363k EUR EBITDA, 358k EUR de inversion."
         },
         {
-          "t": "Ano 2 - Espana",
+          "t": "Año 2 - Espana",
           "d": "100 colegios, 428k EUR ingresos, -520k EUR EBITDA, 345k EUR de inversion."
         },
         {
-          "t": "Ano 3 - Internacional",
+          "t": "Año 3 - Internacional",
           "d": "260 colegios, 1.81M EUR ingresos, +361k EUR EBITDA, margen 20%."
         }
       ],
@@ -735,7 +735,7 @@
       "id": 22,
       "type": "ECONOMIC",
       "title": "Inversion, EBITDA y grafico financiero",
-      "subtitle": "700k EUR requeridos, negocio autofinanciado desde ano 3",
+      "subtitle": "700k EUR requeridos, negocio autofinanciado desde Año 3",
       "stats": [
         {
           "v": "700k EUR",
@@ -743,22 +743,22 @@
         },
         {
           "v": "-520k EUR",
-          "l": "EBITDA ano 2"
+          "l": "EBITDA Año 2"
         },
         {
           "v": "+361k EUR",
-          "l": "EBITDA ano 3"
+          "l": "EBITDA Año 3"
         }
       ],
       "sections": [
         {
-          "body": "Ano 1: validacion y entrada en Madrid."
+          "body": "Año 1: validacion y entrada en Madrid."
         },
         {
-          "body": "Ano 2: expansion nacional con inversion comercial y tecnica."
+          "body": "Año 2: expansion nacional con inversion comercial y tecnica."
         },
         {
-          "body": "Ano 3: escala internacional y punto de autofinanciacion."
+          "body": "Año 3: escala internacional y punto de autofinanciacion."
         }
       ],
       "speakerNotes": "Cerrar la logica economica con una secuencia clara de inversion, crecimiento y rentabilidad.",

@@ -215,7 +215,7 @@ function SlideStage({ slide, children }: { slide: Slide; children: React.ReactNo
   const decorationClass = (slide.decorations ?? []).map((x) => `dec-${x}`).join(' ');
   const densityClass = isCompactSlide(slide) ? 'dense-slide' : '';
   return (
-    <section className={`slide-shell slide-${String(slide.type).toLowerCase()} theme-${slide.themeVariant ?? 'act1'} layout-${slide.layoutVariant ?? 'default'} ${slide.emphasis === 'signature' ? 'signature' : ''} cue-${slide.visualCue ?? 'grid-waves'} style-${slide.visualStyle ?? 'pastel-cream'} ${decorationClass} ${densityClass}`}>
+    <section className={`slide-shell slide-${String(slide.type).toLowerCase()} slide-id-${slide.id} theme-${slide.themeVariant ?? 'act1'} layout-${slide.layoutVariant ?? 'default'} ${slide.emphasis === 'signature' ? 'signature' : ''} cue-${slide.visualCue ?? 'grid-waves'} style-${slide.visualStyle ?? 'pastel-cream'} ${decorationClass} ${densityClass}`}>
       <div className="atmo-layer" aria-hidden />
       <div className="kinetic-layer" aria-hidden />
       <header className="slide-topline">
@@ -357,6 +357,7 @@ function ThreeBigColumns({ slide }: LayoutProps) {
   return (
     <div className="scene-wrap">
       <SlideHeading slide={slide} />
+      {renderStats(slide.stats)}
       <div className="three-big-columns">
         {entries.slice(0, 3).map((item, i) => (
           <article key={`${item.t}-${i}`}>
@@ -551,8 +552,10 @@ function JourneySteps({ slide }: LayoutProps) {
       <div className="journey-heading">
         <SlideHeadingNoCallout slide={slide} />
         {slide.callout ? (
-          <a className="demo-link-inline" href={slide.callout} target="_blank" rel="noreferrer">
-            Probar demo: {slide.callout}
+          <a className="demo-link-cta" href={slide.callout} target="_blank" rel="noreferrer">
+            <span>Demo</span>
+            <strong>Abrir prototipo</strong>
+            <Icons.ExternalLink className="demo-link-icon" />
           </a>
         ) : null}
       </div>
@@ -661,21 +664,28 @@ function FinanceBars({ slide }: LayoutProps) {
       <SlideHeading slide={slide} />
       <div className="finance-content">
         <div className="finance-stat-row">{renderStats(slide.stats)}</div>
-        <div className="bar-chart-panel">
-          <div className="bar-legend">
-            <span><i className="legend-income" />Ingresos (€)</span>
-            <span><i className="legend-cost" />Costes (€)</span>
+        <div className="finance-stack">
+          <div className="bar-chart-panel">
+            <div className="bar-legend">
+              <span><i className="legend-income" />Ingresos (€)</span>
+              <span><i className="legend-cost" />Costes (€)</span>
+            </div>
+            <div className="chart-gridlines" aria-hidden />
+            {rows.map((row) => (
+              <article key={row.label}>
+                <div className="bar-pair">
+                  <div className="bar bar-income" style={{ height: `${row.ingresosH}%` }}><strong>{row.ingresos}</strong></div>
+                  <div className="bar bar-cost" style={{ height: `${row.costesH}%` }}><strong>{row.costes}</strong></div>
+                </div>
+                <span>{row.label}</span>
+              </article>
+            ))}
           </div>
-          <div className="chart-gridlines" aria-hidden />
-          {rows.map((row) => (
-            <article key={row.label}>
-              <div className="bar-pair">
-                <div className="bar bar-income" style={{ height: `${row.ingresosH}%` }}><strong>{row.ingresos}</strong></div>
-                <div className="bar bar-cost" style={{ height: `${row.costesH}%` }}><strong>{row.costes}</strong></div>
-              </div>
-              <span>{row.label}</span>
-            </article>
-          ))}
+          {slide.sections?.length ? (
+            <div className="finance-notes">
+              {renderSections(slide.sections, true)}
+            </div>
+          ) : null}
         </div>
       </div>
     </div>
