@@ -571,6 +571,11 @@
           "body": "Customer success, partnerships, data y DPO se incorporan segun crecen pilotos y exigencias regulatorias."
         }
       ],
+      "image": {
+        "src": "/assets/reference/page_17_alt.png",
+        "alt": "Equipo referencia",
+        "position": "left"
+      },
       "speakerNotes": "Explicar el equipo como un plan realista de capacidad y no solo como organigrama.",
       "themeVariant": "act5",
       "layoutVariant": "editorial-image-box",
@@ -601,6 +606,11 @@
           "body": "Modelo propio fine-tuned, multi-idioma e integraciones LMS."
         }
       ],
+      "image": {
+        "src": "/assets/reference/page_17.png",
+        "alt": "Stack tecnologico referencia",
+        "position": "right"
+      },
       "speakerNotes": "Agrupar la tecnologia en cuatro bloques para no sobrecargar la slide.",
       "themeVariant": "act5",
       "layoutVariant": "editorial-image-box",
