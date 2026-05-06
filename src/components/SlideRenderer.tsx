@@ -17,6 +17,12 @@ type LayoutProps = {
   countItems: number;
 };
 
+type VisualEntry = {
+  t: string;
+  d: string;
+  icon?: string;
+};
+
 const PRESET_MOTION = {
   reveal: {
     initial: { opacity: 0, y: 22 },
@@ -205,6 +211,20 @@ function SlideNumber({ n }: { n: number }) {
   return <span className="big-step-number">{String(n).padStart(2, '0')}</span>;
 }
 
+function CoverEditorial({ slide }: LayoutProps) {
+  return (
+    <div className="scene-wrap cover-editorial">
+      <div className="cover-copy">
+        <p className="cover-kicker">Copiloto pedagogico</p>
+        <h1>{slide.title}</h1>
+        {slide.highlight ? <p className="cover-highlight">{slide.highlight}</p> : null}
+        {slide.callout ? <p className="cover-callout">{slide.callout}</p> : null}
+      </div>
+      {renderImage(slide.image, 'cover-image')}
+    </div>
+  );
+}
+
 function ThreeLineHero({ slide }: LayoutProps) {
   const lines = slide.subtitle.split('|').map((line) => line.trim()).filter(Boolean);
   return (
@@ -242,8 +262,13 @@ function VerticalColorCards({ slide, countCards }: LayoutProps) {
 }
 
 function EmojiGridCards({ slide, countItems }: LayoutProps) {
-  const entries = (slide.items?.slice(0, countItems) ?? slide.sections ?? []).map((x) => (
-    typeof x === 'string' ? { t: x, d: '' } : 't' in x ? x : { t: x.title ?? '', d: x.body ?? '' }
+  const source = slide.items?.slice(0, countItems) ?? slide.sections ?? [];
+  const entries: VisualEntry[] = source.map((x) => (
+    typeof x === 'string'
+      ? { t: x, d: '' }
+      : 't' in x
+        ? x
+        : { t: x.title ?? '', d: x.body ?? '', icon: (x as SlideSection & { icon?: string }).icon }
   ));
   return (
     <div className="scene-wrap">
@@ -399,21 +424,29 @@ function BenchmarkMap({ slide }: LayoutProps) {
     <div className="scene-wrap">
       <SlideHeading slide={slide} />
       <div className="benchmark-layout">
-        <div className="landscape-map">
-          <div className="axis-x">Mayor personalizacion</div>
-          <div className="axis-y">Mayor facilidad docente</div>
-          <div className="grid-markers" />
-          {points.map((p) => <span key={p.label} className="market-point" style={{ left: `${p.x}%`, top: `${p.y}%` }}>{p.label}</span>)}
-          <div className="opportunity-zone">Opportunity Space - eduTechIA</div>
+        <div className="benchmark-left">
+          <div className="landscape-map">
+            <div className="axis-x">Mayor personalizacion</div>
+            <div className="axis-y">Mayor facilidad docente</div>
+            <div className="grid-markers" />
+            {points.map((p) => <span key={p.label} className="market-point" style={{ left: `${p.x}%`, top: `${p.y}%` }}>{p.label}</span>)}
+            <div className="opportunity-zone">eduTechIA</div>
+          </div>
+          <div className="benchmark-legend">
+            {points.map((p) => (
+              <article key={p.label}>
+                <strong>{p.label}</strong>
+                <span>{p.title}</span>
+                <p>{p.desc}</p>
+              </article>
+            ))}
+          </div>
         </div>
-        <div className="benchmark-legend">
-          {points.map((p) => (
-            <article key={p.label}>
-              <strong>{p.label}</strong>
-              <span>{p.title}</span>
-              <p>{p.desc}</p>
-            </article>
-          ))}
+        <div className="benchmark-insight">
+          <span>Lo importante</span>
+          <h3>El hueco no es otra plataforma completa.</h3>
+          <p>eduTechIA se enfoca en convertir una necesidad docente en una actividad adaptada, facil de revisar y con control humano.</p>
+          {renderListItems(slide.items)}
         </div>
       </div>
     </div>
@@ -577,10 +610,10 @@ function PricingReplica({ slide }: LayoutProps) {
 }
 
 function FinanceBars({ slide }: LayoutProps) {
-  const bars = [
-    { label: 'Ano 1', value: '115k', h: 26 },
-    { label: 'Ano 2', value: '428k', h: 52 },
-    { label: 'Ano 3', value: '1.81M', h: 92 },
+  const rows = [
+    { label: 'Ano 1', ingresos: '115k', costes: '478k', ingresosH: 7, costesH: 24 },
+    { label: 'Ano 2', ingresos: '428k', costes: '948k', ingresosH: 21, costesH: 47 },
+    { label: 'Ano 3', ingresos: '1.81M', costes: '1.449M', ingresosH: 90, costesH: 72 },
   ];
   return (
     <div className="scene-wrap finance-bars-layout">
@@ -588,10 +621,18 @@ function FinanceBars({ slide }: LayoutProps) {
       <div className="finance-content">
         <div className="finance-stat-row">{renderStats(slide.stats)}</div>
         <div className="bar-chart-panel">
-          {bars.map((bar) => (
-            <article key={bar.label}>
-              <div className="bar" style={{ height: `${bar.h}%` }}><strong>{bar.value}</strong></div>
-              <span>{bar.label}</span>
+          <div className="bar-legend">
+            <span><i className="legend-income" />Ingresos (€)</span>
+            <span><i className="legend-cost" />Costes (€)</span>
+          </div>
+          <div className="chart-gridlines" aria-hidden />
+          {rows.map((row) => (
+            <article key={row.label}>
+              <div className="bar-pair">
+                <div className="bar bar-income" style={{ height: `${row.ingresosH}%` }}><strong>{row.ingresos}</strong></div>
+                <div className="bar bar-cost" style={{ height: `${row.costesH}%` }}><strong>{row.costes}</strong></div>
+              </div>
+              <span>{row.label}</span>
             </article>
           ))}
         </div>
@@ -694,6 +735,7 @@ function GenericData({ slide, countCards, countItems }: LayoutProps) {
 const LAYOUT_REGISTRY: Record<string, (props: LayoutProps) => JSX.Element> = {
   'hero-cinematic': HeroCinematicV2,
   'hero-cinematic-v2': HeroCinematicV2,
+  'cover-editorial': CoverEditorial,
   'agenda-cards': AgendaCards,
   'problem-split': ProblemSplit,
   'editorial-image-box': EditorialImageBox,
