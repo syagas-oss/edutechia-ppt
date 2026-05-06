@@ -1520,7 +1520,7 @@ body {
 }
 
 .cover-editorial {
-  grid-template-columns: minmax(0, 0.95fr) minmax(0, 1.05fr);
+  grid-template-columns: minmax(0, 1.05fr) minmax(0, 0.95fr);
   align-items: stretch;
   gap: 24px;
 }
@@ -1529,7 +1529,7 @@ body {
   border-radius: 28px;
   background: #fffdf7;
   box-shadow: 9px 9px 0 rgba(16, 16, 16, 0.78);
-  padding: 34px;
+  padding: 30px 36px;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -1545,9 +1545,11 @@ body {
 .cover-copy h1 {
   margin: 0;
   font-family: 'Barlow Condensed', sans-serif;
-  font-size: clamp(4.1rem, 6.4vw, 6.9rem);
-  line-height: 0.9;
+  font-size: clamp(3.65rem, 5.55vw, 5.95rem);
+  line-height: 0.94;
   text-transform: uppercase;
+  letter-spacing: -0.035em;
+  max-width: 10.8ch;
 }
 .cover-highlight {
   margin: 24px 0 0;
@@ -1664,25 +1666,41 @@ body {
 }
 
 .benchmark-layout {
-  grid-template-columns: minmax(0, 1.2fr) minmax(300px, 0.8fr);
+  grid-template-columns: minmax(0, 1.18fr) minmax(330px, 0.82fr);
   gap: 14px;
+  min-height: 0;
+  overflow: hidden;
 }
 .benchmark-left {
-  display: grid;
-  grid-template-rows: minmax(0, 1fr) 86px;
-  gap: 7px;
+  display: block;
   min-height: 0;
 }
 .benchmark-left .landscape-map {
+  height: 100%;
   min-height: 0;
 }
+.layout-benchmark-map .slide-heading {
+  max-width: 58ch;
+}
+.layout-benchmark-map .slide-title {
+  font-size: clamp(2.65rem, 4.25vw, 4.85rem);
+  line-height: 0.96;
+}
+.layout-benchmark-map .slide-subtitle {
+  margin-top: 6px;
+  font-size: 1.02rem;
+}
 .benchmark-legend {
-  grid-template-columns: repeat(5, minmax(0, 1fr));
+  grid-template-columns: 1fr;
   gap: 7px;
 }
+.benchmark-legend.compact {
+  grid-template-columns: repeat(5, minmax(0, 1fr));
+  margin-top: 12px;
+}
 .benchmark-legend article {
-  grid-template-columns: 28px 1fr;
-  padding: 6px;
+  grid-template-columns: 26px 1fr;
+  padding: 6px 7px;
   border-width: 2px;
   box-shadow: 3px 3px 0 rgba(16, 16, 16, 0.58);
   overflow: hidden;
@@ -1706,10 +1724,12 @@ body {
   border-radius: 24px;
   background: #fffdf7;
   box-shadow: 7px 7px 0 rgba(16, 16, 16, 0.72);
-  padding: 22px;
+  padding: 18px;
   display: flex;
   flex-direction: column;
   justify-content: center;
+  min-height: 0;
+  overflow: hidden;
 }
 .benchmark-insight > span {
   color: var(--orange);
@@ -1720,10 +1740,10 @@ body {
   text-transform: uppercase;
 }
 .benchmark-insight h3 {
-  margin: 14px 0 10px;
+  margin: 10px 0 8px;
   font-family: 'Barlow Condensed', sans-serif;
-  font-size: clamp(2.1rem, 3vw, 3.35rem);
-  line-height: 0.95;
+  font-size: clamp(1.9rem, 2.55vw, 2.8rem);
+  line-height: 0.98;
   text-transform: uppercase;
 }
 .benchmark-insight p {
@@ -1732,10 +1752,23 @@ body {
   line-height: 1.36;
   font-weight: 650;
 }
+.benchmark-insight > p {
+  font-size: 0.98rem;
+  line-height: 1.28;
+}
+.benchmark-insight .list-premium {
+  gap: 6px;
+  margin-top: 10px;
+}
 .benchmark-insight .list-premium li {
   padding: 8px;
   border-width: 2px;
   box-shadow: 3px 3px 0 rgba(16, 16, 16, 0.5);
+}
+.benchmark-insight .list-premium small,
+.benchmark-insight .list-premium li {
+  font-size: 0.82rem;
+  line-height: 1.18;
 }
 
 .north-star-layout {
@@ -1783,58 +1816,81 @@ body {
 
 .tall-media-layout {
   grid-template-columns: minmax(270px, 0.88fr) minmax(0, 1.12fr);
-  gap: 14px;
+  gap: 12px;
+  min-height: 0;
+  overflow: hidden;
 }
 .tall-reference-image {
   background: #fffdf7;
+  min-height: 0;
 }
 .tall-reference-image img {
   object-fit: contain;
 }
+.layout-tall-media-cards .slide-heading {
+  max-width: 54ch;
+}
+.layout-tall-media-cards .slide-title {
+  font-size: clamp(2.7rem, 4.35vw, 5rem);
+  line-height: 0.95;
+}
+.layout-tall-media-cards .slide-subtitle {
+  margin-top: 6px;
+  font-size: 1.02rem;
+}
+.layout-tall-media-cards .accent-rule {
+  margin: 8px 0 12px;
+}
 .tall-card-stack {
-  gap: 10px;
+  gap: 8px;
+  min-height: 0;
 }
 .tall-card {
   border-radius: 18px;
   box-shadow: 5px 5px 0 rgba(16, 16, 16, 0.66);
-  padding: 18px;
+  padding: 14px 18px;
+  min-height: 0;
 }
 .tall-card h3 {
-  font-size: clamp(1.35rem, 1.9vw, 2.15rem);
+  margin-bottom: 6px;
+  font-size: clamp(1.2rem, 1.65vw, 1.85rem);
 }
 .tall-card p {
-  font-size: 1.02rem;
-  line-height: 1.33;
+  font-size: 0.92rem;
+  line-height: 1.24;
 }
 
 .disruptive-hero {
-  padding: 24px;
+  padding: 18px 28px 8px;
   align-content: center;
   overflow: hidden;
   grid-template-rows: minmax(0, auto) auto;
 }
+.layout-disruptive-hero .accent-rule {
+  margin: 8px 0 10px;
+}
 .impact-orbit {
-  width: 430px;
-  height: 430px;
+  width: 360px;
+  height: 360px;
   box-shadow: inset 0 0 0 16px rgba(245, 176, 65, 0.5), 0 0 0 20px rgba(208, 241, 86, 0.28);
 }
 .impact-copy {
-  max-width: 920px;
+  max-width: 860px;
   border-radius: 28px;
   box-shadow: 10px 10px 0 rgba(242, 106, 36, 0.88);
-  padding: 34px;
+  padding: 22px 30px 28px;
   z-index: 1;
 }
 .impact-copy p {
-  margin-bottom: 12px;
+  margin-bottom: 9px;
   font-size: 0.88rem;
 }
 .impact-copy h1 {
-  font-size: clamp(3rem, 5.35vw, 6rem);
-  line-height: 0.92;
+  font-size: clamp(2.65rem, 4.45vw, 5rem);
+  line-height: 0.94;
 }
 .impact-copy strong {
-  margin-top: 18px;
+  margin-top: 12px;
   font-size: 1.08rem;
 }
 .impact-callout {
@@ -1842,7 +1898,7 @@ body {
   right: auto;
   bottom: auto;
   z-index: 2;
-  margin-top: 14px;
+  margin-top: 9px;
   max-width: min(760px, 88%);
   padding: 12px 18px;
   font-size: 1rem;

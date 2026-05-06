@@ -464,20 +464,19 @@ function BenchmarkMap({ slide }: LayoutProps) {
             {points.map((p) => <span key={p.label} className="market-point" style={{ left: `${p.x}%`, top: `${p.y}%` }}>{p.label}</span>)}
             <div className="opportunity-zone">eduTechIA</div>
           </div>
-          <div className="benchmark-legend">
-            {points.map((p) => (
-              <article key={p.label}>
-                <strong>{p.label}</strong>
-                <span>{p.title}</span>
-                <p>{p.desc}</p>
-              </article>
-            ))}
-          </div>
         </div>
         <div className="benchmark-insight">
           <span>Lo importante</span>
           <h3>El hueco no es otra plataforma completa.</h3>
           <p>eduTechIA se enfoca en convertir una necesidad docente en una actividad adaptada, facil de revisar y con control humano.</p>
+          <div className="benchmark-legend compact">
+            {points.map((p) => (
+              <article key={p.label}>
+                <strong>{p.label}</strong>
+                <span>{p.title}</span>
+              </article>
+            ))}
+          </div>
           {renderListItems(slide.items)}
         </div>
       </div>
