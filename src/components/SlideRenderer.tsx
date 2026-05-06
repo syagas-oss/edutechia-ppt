@@ -23,6 +23,38 @@ type VisualEntry = {
   icon?: string;
 };
 
+function VisualIcon({ name, index, className }: { name?: string; index: number; className: string }) {
+  const fallback = ['teacher', 'settings', 'check', 'target', 'shield', 'pin', 'brain', 'file', 'student', 'chart', 'compass'];
+  const key = (name && !name.includes('?') ? name : fallback[index % fallback.length]).toLowerCase();
+  const Icon = ({
+    teacher: Icons.UserRoundCheck,
+    settings: Icons.Settings,
+    check: Icons.CheckCircle2,
+    target: Icons.Target,
+    shield: Icons.ShieldCheck,
+    pin: Icons.Pin,
+    brain: Icons.Brain,
+    file: Icons.FileText,
+    student: Icons.GraduationCap,
+    chart: Icons.BarChart3,
+    compass: Icons.Compass,
+    privacy: Icons.EyeOff,
+    ban: Icons.Ban,
+    ruler: Icons.Ruler,
+    tag: Icons.Tags,
+    refresh: Icons.RefreshCw,
+    spark: Icons.Sparkles,
+    puzzle: Icons.Puzzle,
+    rocket: Icons.Rocket,
+  } as Record<string, Icons.LucideIcon>)[key] ?? Icons.Sparkles;
+
+  return (
+    <span className={className} aria-hidden>
+      <Icon strokeWidth={2.5} />
+    </span>
+  );
+}
+
 const PRESET_MOTION = {
   reveal: {
     initial: { opacity: 0, y: 22 },
@@ -276,7 +308,7 @@ function EmojiGridCards({ slide, countItems }: LayoutProps) {
       <div className={`emoji-grid-cards count-${entries.length}`}>
         {entries.map((item, i) => (
           <article key={`${item.t}-${i}`} className="emoji-card">
-            <span className="emoji-badge">{item.icon ?? ['🧑‍🏫', '⚙️', '✅', '🎯', '🛡️', '📌'][i % 6]}</span>
+            <VisualIcon name={item.icon} index={i} className="emoji-badge" />
             <h3>{item.t}</h3>
             <p>{item.d}</p>
           </article>
@@ -318,7 +350,7 @@ function ThreeBigColumns({ slide }: LayoutProps) {
       <div className="three-big-columns">
         {entries.slice(0, 3).map((item, i) => (
           <article key={`${item.t}-${i}`}>
-            <span>{item.icon ?? ['✨', '🧩', '🚀'][i]}</span>
+            <VisualIcon name={item.icon} index={i} className="column-icon" />
             <h3>{item.t}</h3>
             <p>{item.d}</p>
           </article>
@@ -474,7 +506,7 @@ function ArrowFlow({ slide, countItems }: LayoutProps) {
       <div className="arrow-flow">
         {items.map((item, i) => (
           <article key={`${item.t}-${i}`}>
-            <span className="flow-emoji">{item.icon ?? ['🧑‍🏫', '🧠', '📝', '👧', '📊', '🧭', '✅'][i % 7]}</span>
+            <VisualIcon name={item.icon} index={i} className="flow-emoji" />
             <h3>{item.t}</h3>
             <p>{item.d}</p>
             {i < items.length - 1 ? <span className="flow-arrow">→</span> : null}

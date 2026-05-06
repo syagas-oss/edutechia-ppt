@@ -88,22 +88,22 @@
         {
           "t": "Input docente",
           "d": "Curso, tema, duracion y perfil pedagogico.",
-          "icon": "?????"
+          "icon": "teacher"
         },
         {
           "t": "Generacion IA",
           "d": "Actividad breve, pasos guiados, adaptacion y feedback sugerido.",
-          "icon": "??"
+          "icon": "settings"
         },
         {
           "t": "Revision docente",
           "d": "El profesor ajusta la propuesta antes de usarla.",
-          "icon": "?"
+          "icon": "check"
         },
         {
           "t": "Control pedagogico",
           "d": "La decision final sigue siendo humana.",
-          "icon": "??"
+          "icon": "target"
         }
       ],
       "builds": [
@@ -261,37 +261,37 @@
         {
           "t": "Docente",
           "d": "Define necesidad pedagogica, tema, nivel y perfil.",
-          "icon": "?????"
+          "icon": "teacher"
         },
         {
           "t": "Motor IA",
           "d": "Interpreta la necesidad y aplica criterios pedagogicos.",
-          "icon": "??"
+          "icon": "brain"
         },
         {
           "t": "Generacion",
           "d": "Crea actividad, pasos guiados, adaptaciones y feedback.",
-          "icon": "??"
+          "icon": "file"
         },
         {
           "t": "Alumno",
           "d": "En fase futura, realiza la actividad dentro de la herramienta.",
-          "icon": "??"
+          "icon": "student"
         },
         {
           "t": "Analisis",
           "d": "En fase futura, analiza aciertos, errores y dificultades.",
-          "icon": "??"
+          "icon": "chart"
         },
         {
           "t": "Recomendacion",
           "d": "Sugiere repetir, simplificar o avanzar segun progreso.",
-          "icon": "??"
+          "icon": "compass"
         },
         {
           "t": "Validacion docente",
           "d": "La decision final sigue siendo humana.",
-          "icon": "?"
+          "icon": "check"
         }
       ],
       "speakerNotes": "La PoC valida los pasos 1, 2, 3 y 7; los demas quedan para evolucion.",
@@ -442,7 +442,7 @@
         },
         {
           "title": "Tiempo docente <=5 min",
-          "body": "Medimos el flujo completo: definir necesidad, generar, revisar y aprobar. Si supera 10 minutos, la PoC se detiene y se redise?a."
+          "body": "Medimos el flujo completo: definir necesidad, generar, revisar y aprobar. Si supera 10 minutos, la PoC se detiene y se redisena."
         },
         {
           "title": "Satisfaccion >=4/5",
@@ -464,7 +464,7 @@
       "type": "KINETIC_BRIDGE",
       "title": "Diferencial clave de eduTechIA",
       "subtitle": "No genera mas contenido. Reduce carga docente con adaptacion pedagogica controlada.",
-      "highlight": "Nivel ? ritmo ? carga cognitiva ? refuerzo positivo",
+      "highlight": "Nivel - ritmo - carga cognitiva - refuerzo positivo",
       "callout": "La IA no etiqueta. El docente decide.",
       "speakerNotes": "Mensaje puente antes de entrar en seguridad y regulacion.",
       "themeVariant": "act4",
@@ -525,32 +525,32 @@
         {
           "title": "Supervision humana",
           "body": "En PoC el docente revisa antes de usar; en producto la aprobacion sera obligatoria.",
-          "icon": "?????"
+          "icon": "teacher"
         },
         {
           "title": "Anonimizacion estructural",
           "body": "La validacion inicial usa perfiles ficticios y luego identificadores anonimos.",
-          "icon": "???"
+          "icon": "privacy"
         },
         {
           "title": "Sin diagnosticos medicos",
           "body": "Solo perfiles pedagogicos, nunca etiquetas clinicas.",
-          "icon": "??"
+          "icon": "ban"
         },
         {
           "title": "Control de calidad",
           "body": "Si mas del 30% de actividades son rechazadas, se revisan prompt, criterios y proveedor.",
-          "icon": "??"
+          "icon": "ruler"
         },
         {
           "title": "Transparencia ante familias",
           "body": "Cada ejercicio se acompana de la nota: generado con IA y revisado por docente.",
-          "icon": "???"
+          "icon": "tag"
         },
         {
           "title": "Sin etiquetado permanente",
           "body": "Los perfiles se revisan periodicamente y no quedan fijados para siempre.",
-          "icon": "??"
+          "icon": "refresh"
         }
       ],
       "speakerNotes": "Los guardarrailes cubren riesgo humano, pedagogico, legal y tecnico.",
@@ -688,17 +688,17 @@
         {
           "title": "PoC",
           "body": "React + Vite + Tailwind para frontend, n8n para orquestar el flujo, Supabase para persistencia inicial y OpenRouter como capa de acceso a modelos.",
-          "icon": "??"
+          "icon": "spark"
         },
         {
           "title": "Crecimiento",
           "body": "Azure OpenAI, PostgreSQL gestionado y Kubernetes solo cuando el volumen lo justifique. La infraestructura escala con pilotos, no antes.",
-          "icon": "??"
+          "icon": "chart"
         },
         {
           "title": "Seguridad y futuro",
           "body": "Cloudflare WAF, Datadog, trazabilidad, control de acceso, modelo fine-tuned, multi-idioma e integraciones LMS.",
-          "icon": "???"
+          "icon": "shield"
         }
       ]
     },
