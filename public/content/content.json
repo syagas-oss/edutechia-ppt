@@ -531,41 +531,6 @@
       }
     },
     {
-      "id": 17,
-      "type": "SQUADS",
-      "title": "Equipo y Stack Tecnologico",
-      "subtitle": "Crecimiento organizado por fases",
-      "sections": [
-        {
-          "title": "Crecimiento del equipo",
-          "body": "Ano 1: 6 FTE. Ano 2: 9 FTE. Ano 3: 14 FTE."
-        },
-        {
-          "title": "Stack tecnologico",
-          "body": "Ano 1: n8n + Supabase + React + OpenRouter. Ano 2: Azure OpenAI + Kubernetes. Ano 3: modelo propio fine-tuned."
-        },
-        {
-          "title": "Roles clave",
-          "body": "CTO+Dev, CEO/comercial, pedagogo, customer success, data scientist y DPO."
-        },
-        {
-          "title": "Evolucion tech",
-          "body": "Cumplimiento RGPD y AI Act, ENS Alto para sector publico y APIs LMS en fases posteriores."
-        }
-      ],
-      "speakerNotes": "La capacidad de ejecucion crece junto con pilotos, compliance e integraciones.",
-      "themeVariant": "act5",
-      "layoutVariant": "editorial-image-box",
-      "motionPreset": "sequence-build",
-      "visualStyle": "pastel-cream",
-      "decorations": ["frame"],
-      "image": {
-        "src": "/assets/reference/page_28.png",
-        "alt": "Equipo y stack referencia",
-        "position": "right"
-      }
-    },
-    {
       "id": 18,
       "type": "BENTO_GRID",
       "title": "Equipo",
