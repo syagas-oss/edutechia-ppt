@@ -239,6 +239,16 @@ function SlideHeading({ slide }: { slide: Slide }) {
   );
 }
 
+function SlideHeadingNoCallout({ slide }: { slide: Slide }) {
+  return (
+    <div className="slide-heading">
+      <h1 className="slide-title">{slide.title}</h1>
+      <p className="slide-subtitle">{slide.subtitle}</p>
+      {slide.highlight ? <p className="highlight-chip">{slide.highlight}</p> : null}
+    </div>
+  );
+}
+
 function SlideNumber({ n }: { n: number }) {
   return <span className="big-step-number">{String(n).padStart(2, '0')}</span>;
 }
@@ -477,7 +487,6 @@ function BenchmarkMap({ slide }: LayoutProps) {
               </article>
             ))}
           </div>
-          {renderListItems(slide.items)}
         </div>
       </div>
     </div>
@@ -539,7 +548,14 @@ function LayerStackVertical({ slide }: LayoutProps) {
 function JourneySteps({ slide }: LayoutProps) {
   return (
     <div className="scene-wrap">
-      <SlideHeading slide={slide} />
+      <div className="journey-heading">
+        <SlideHeadingNoCallout slide={slide} />
+        {slide.callout ? (
+          <a className="demo-link-inline" href={slide.callout} target="_blank" rel="noreferrer">
+            Probar demo: {slide.callout}
+          </a>
+        ) : null}
+      </div>
       <div className="journey-layout">
         <div className="journey-steps">
           {(slide.sections ?? []).map((section, i) => (
@@ -551,12 +567,6 @@ function JourneySteps({ slide }: LayoutProps) {
             </article>
           ))}
         </div>
-        {slide.callout ? (
-          <a className="demo-link-cta" href={slide.callout} target="_blank" rel="noreferrer">
-            <span>Probar demo</span>
-            <strong>{slide.callout}</strong>
-          </a>
-        ) : null}
       </div>
     </div>
   );
